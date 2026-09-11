@@ -24,6 +24,7 @@
 
 <body>
 
+
     <!-- ==========================================================
          HEADER
     =========================================================== -->
@@ -37,6 +38,7 @@
                 class="logo">
                 NÓS
             </a>
+
 
             <nav>
 
@@ -77,9 +79,15 @@
             </nav>
 
 
-            <!-- CONTROLES DO MESMO PLAYER DA PLAYLIST -->
+            <!-- ==================================================
+                 CONTROLE DO TOPO
+                 Controla o mesmo player da Playlist
+            =================================================== -->
 
             <div class="top-player-controls">
+
+
+                <!-- Botões ocupando as duas linhas -->
 
                 <div class="top-player-buttons">
 
@@ -117,15 +125,26 @@
 
                 </div>
 
+
+                <!-- Informações -->
+
                 <div class="top-player-info">
 
                     <span class="top-player-label">
-                        Tocando agora:
+                        Tocando agora
                     </span>
 
-                    <strong id="topVideoTitle">
-                        Marcos &amp; Belutti — Sonho De Todo Casal
-                    </strong>
+                    <div class="top-player-current">
+
+                        <strong id="topVideoTitle">
+                            Marcos &amp; Belutti — Sonho De Todo Casal
+                        </strong>
+
+                        <span id="topVideoCounter">
+                            01 / 04
+                        </span>
+
+                    </div>
 
                 </div>
 
@@ -136,11 +155,17 @@
     </header>
 
 
+
     <!-- ==========================================================
-         INÍCIO
+         CONTEÚDO
     =========================================================== -->
 
     <main>
+
+
+        <!-- ======================================================
+             INÍCIO
+        ======================================================= -->
 
         <section
             id="inicio"
@@ -174,6 +199,7 @@
             </div>
 
         </section>
+
 
 
         <!-- ======================================================
@@ -220,6 +246,7 @@
         </section>
 
 
+
         <!-- ======================================================
              FRASE
         ======================================================= -->
@@ -242,6 +269,7 @@
         </section>
 
 
+
         <!-- ======================================================
              MOMENTOS
         ======================================================= -->
@@ -262,6 +290,7 @@
 
                 <div class="gallery">
 
+
                     <div class="gallery-item">
 
                         <img
@@ -269,6 +298,7 @@
                             alt="Momento especial">
 
                     </div>
+
 
                     <div class="gallery-item">
 
@@ -278,6 +308,7 @@
 
                     </div>
 
+
                     <div class="gallery-item">
 
                         <img
@@ -285,6 +316,7 @@
                             alt="Momento especial">
 
                     </div>
+
 
                     <div class="gallery-item">
 
@@ -294,6 +326,7 @@
 
                     </div>
 
+
                     <div class="gallery-item">
 
                         <img
@@ -302,6 +335,7 @@
 
                     </div>
 
+
                 </div>
 
             </div>
@@ -309,9 +343,11 @@
         </section>
 
 
+
         <!-- ======================================================
              PLAYLIST
-             ÚNICO PLAYER DA PÁGINA
+             UM ÚNICO PLAYER
+             CONTROLE PRÓPRIO DA PLAYLIST
         ======================================================= -->
 
         <section
@@ -332,7 +368,9 @@
                 <div class="playlist-container">
 
 
-                    <!-- PLAYER -->
+                    <!-- ==================================================
+                         PLAYER PRINCIPAL
+                    =================================================== -->
 
                     <div class="video-main">
 
@@ -342,10 +380,80 @@
 
                         </div>
 
+
+                        <!-- ==================================================
+                             CONTROLES DA PLAYLIST
+                             SEGUNDO CONTROLE DO MESMO PLAYER
+                        =================================================== -->
+
+                        <div class="video-controls">
+
+
+                            <button
+                                type="button"
+                                id="playlistPrevious"
+                                title="Vídeo anterior"
+                                aria-label="Vídeo anterior">
+                                ⏮
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="playlistPlay"
+                                title="Reproduzir"
+                                aria-label="Reproduzir">
+                                ▶
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="playlistPause"
+                                title="Pausar"
+                                aria-label="Pausar">
+                                ❚❚
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="playlistNext"
+                                title="Próximo vídeo"
+                                aria-label="Próximo vídeo">
+                                ⏭
+                            </button>
+
+
+                            <div class="video-information">
+
+                                <span>
+                                    Tocando agora
+                                </span>
+
+                                <strong id="playlistVideoTitle">
+                                    Marcos &amp; Belutti — Sonho De Todo Casal
+                                </strong>
+
+                            </div>
+
+
+                            <span
+                                id="playlistVideoCounter"
+                                class="video-counter">
+                                01 / 04
+                            </span>
+
+
+                        </div>
+
                     </div>
 
 
-                    <!-- LISTA -->
+
+                    <!-- ==================================================
+                         LISTA DE MÚSICAS
+                    =================================================== -->
 
                     <div class="playlist-list">
 
@@ -373,6 +481,7 @@
                         </div>
 
 
+
                         <div
                             class="playlist-item"
                             data-video="1">
@@ -396,6 +505,7 @@
                         </div>
 
 
+
                         <div
                             class="playlist-item"
                             data-video="2">
@@ -417,6 +527,7 @@
                             </div>
 
                         </div>
+
 
 
                         <div
@@ -449,6 +560,7 @@
             </div>
 
         </section>
+
 
 
         <!-- ======================================================
@@ -498,6 +610,7 @@
                     </div>
 
 
+
                     <div class="timeline-item">
 
                         <div class="timeline-marker">
@@ -523,6 +636,7 @@
                         </div>
 
                     </div>
+
 
 
                     <div class="timeline-item">
@@ -559,6 +673,7 @@
         </section>
 
 
+
         <!-- ======================================================
              FRASE FINAL
         ======================================================= -->
@@ -579,6 +694,7 @@
             </div>
 
         </section>
+
 
 
         <!-- ======================================================
@@ -613,6 +729,7 @@
     </main>
 
 
+
     <!-- ==========================================================
          FOOTER
     =========================================================== -->
@@ -626,6 +743,7 @@
     </footer>
 
 
+
     <!-- ==========================================================
          YOUTUBE API
     =========================================================== -->
@@ -633,11 +751,17 @@
     <script src="https://www.youtube.com/iframe_api"></script>
 
 
+
     <!-- ==========================================================
          JAVASCRIPT
     =========================================================== -->
 
     <script>
+
+
+        /* ======================================================
+           PLAYLIST ÚNICA
+        ======================================================= */
 
         const playlist = [
 
@@ -681,6 +805,7 @@
         let videoPlayer = null;
 
         let videoPlayerPronto = false;
+
 
 
         /* ======================================================
@@ -735,8 +860,10 @@
 
                                 },
 
+
                             onStateChange:
                                 controlarEstadoVideo,
+
 
                             onError:
                                 function (evento) {
@@ -756,8 +883,9 @@
         }
 
 
+
         /* ======================================================
-           ATUALIZA INTERFACE
+           ATUALIZA OS DOIS CONTROLES
         ======================================================= */
 
         function atualizarPlaylistInterface() {
@@ -773,9 +901,18 @@
             }
 
 
+
+            /* CONTROLE DO TOPO */
+
             const topVideoTitle =
                 document.getElementById(
                     "topVideoTitle"
+                );
+
+
+            const topVideoCounter =
+                document.getElementById(
+                    "topVideoCounter"
                 );
 
 
@@ -786,6 +923,64 @@
 
             }
 
+
+            if (topVideoCounter) {
+
+                topVideoCounter.textContent =
+                    String(
+                        playlistAtual + 1
+                    ).padStart(2, "0")
+                    +
+                    " / "
+                    +
+                    String(
+                        playlist.length
+                    ).padStart(2, "0");
+
+            }
+
+
+
+            /* CONTROLE DA PLAYLIST */
+
+            const playlistVideoTitle =
+                document.getElementById(
+                    "playlistVideoTitle"
+                );
+
+
+            const playlistVideoCounter =
+                document.getElementById(
+                    "playlistVideoCounter"
+                );
+
+
+            if (playlistVideoTitle) {
+
+                playlistVideoTitle.textContent =
+                    video.titulo;
+
+            }
+
+
+            if (playlistVideoCounter) {
+
+                playlistVideoCounter.textContent =
+                    String(
+                        playlistAtual + 1
+                    ).padStart(2, "0")
+                    +
+                    " / "
+                    +
+                    String(
+                        playlist.length
+                    ).padStart(2, "0");
+
+            }
+
+
+
+            /* LISTA */
 
             document
                 .querySelectorAll(
@@ -808,8 +1003,9 @@
         }
 
 
+
         /* ======================================================
-           CARREGA VÍDEO
+           CARREGAR VÍDEO
         ======================================================= */
 
         function carregarVideo(
@@ -866,8 +1062,9 @@
         }
 
 
+
         /* ======================================================
-           VÍDEO ANTERIOR
+           ANTERIOR
         ======================================================= */
 
         function videoAnterior() {
@@ -880,8 +1077,9 @@
         }
 
 
+
         /* ======================================================
-           PRÓXIMO VÍDEO
+           PRÓXIMO
         ======================================================= */
 
         function proximoVideo() {
@@ -892,6 +1090,7 @@
             );
 
         }
+
 
 
         /* ======================================================
@@ -909,6 +1108,7 @@
         }
 
 
+
         /* ======================================================
            PAUSAR
         ======================================================= */
@@ -924,8 +1124,9 @@
         }
 
 
+
         /* ======================================================
-           ESTADO DO PLAYER
+           FINAL DO VÍDEO
         ======================================================= */
 
         function controlarEstadoVideo(
@@ -944,11 +1145,9 @@
         }
 
 
-        /* ======================================================
-           BOTÃO "NOSSA HISTÓRIA"
 
-           Inicia o primeiro vídeo usando
-           o mesmo player da Playlist.
+        /* ======================================================
+           BOTÃO NOSSA HISTÓRIA
         ======================================================= */
 
         document
@@ -1010,10 +1209,10 @@
             );
 
 
+
         /* ======================================================
            CONTROLES DO TOPO
-
-           Controlam o mesmo player da Playlist.
+           Todos usam o mesmo player.
         ======================================================= */
 
         document
@@ -1056,10 +1255,55 @@
             );
 
 
+
+        /* ======================================================
+           CONTROLES DA PLAYLIST
+           Também usam o mesmo player.
+        ======================================================= */
+
+        document
+            .getElementById(
+                "playlistPrevious"
+            )
+            .addEventListener(
+                "click",
+                videoAnterior
+            );
+
+
+        document
+            .getElementById(
+                "playlistPlay"
+            )
+            .addEventListener(
+                "click",
+                reproduzirVideo
+            );
+
+
+        document
+            .getElementById(
+                "playlistPause"
+            )
+            .addEventListener(
+                "click",
+                pausarVideo
+            );
+
+
+        document
+            .getElementById(
+                "playlistNext"
+            )
+            .addEventListener(
+                "click",
+                proximoVideo
+            );
+
+
+
         /* ======================================================
            ITENS DA PLAYLIST
-
-           Continuam usando o mesmo player.
         ======================================================= */
 
         document
@@ -1091,7 +1335,13 @@
             );
 
 
+
+        /* ======================================================
+           ESTADO INICIAL
+        ======================================================= */
+
         atualizarPlaylistInterface();
+
 
     </script>
 

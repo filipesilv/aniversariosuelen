@@ -1,3 +1,8 @@
+```css
+/* ==========================================================
+   RESET
+========================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +10,13 @@
 }
 
 
+/* ==========================================================
+   BASE
+========================================================== */
+
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     background: #000;
@@ -16,47 +24,35 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 :root {
 
     --preto: #000000;
-
     --preto-2: #0a0a0a;
-
     --preto-3: #111111;
 
     --branco: #ffffff;
 
     --cinza: #b5b5b5;
-
     --cinza-escuro: #333333;
 
-    --borda:
-        rgba(255, 255, 255, 0.12);
+    --borda: rgba(255, 255, 255, 0.12);
 
-    --transicao:
-        0.3s ease;
-
+    --transicao: 0.3s ease;
 }
 
 
 /* ==========================================================
-   CONTAINER
+   LINKS
 ========================================================== */
 
-.container {
-
-    width: 90%;
-
-    max-width: 1400px;
-
-    margin: 0 auto;
-
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 
 /* ==========================================================
-   CABEÇALHO
+   HEADER
 ========================================================== */
 
 .header {
@@ -68,31 +64,22 @@ body {
 
     width: 100%;
 
-    height: 80px;
-
-    display: flex;
-
-    align-items: center;
-
-    background:
-        rgba(0, 0, 0, 0.75);
-
-    backdrop-filter:
-        blur(12px);
-
-    border-bottom:
-        1px solid var(--borda);
-
     z-index: 1000;
 
+    background: rgba(0, 0, 0, 0.88);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
 }
 
 
 .header-content {
 
-    width: 90%;
+    width: min(1400px, 92%);
 
-    max-width: 1400px;
+    min-height: 82px;
 
     margin: 0 auto;
 
@@ -102,72 +89,61 @@ body {
 
     justify-content: space-between;
 
-    gap: 20px;
-
+    gap: 30px;
 }
 
 
+/* ==========================================================
+   LOGO
+========================================================== */
+
 .logo {
 
-    color: var(--branco);
+    flex-shrink: 0;
 
     font-size: 18px;
 
     font-weight: 600;
 
     letter-spacing: 5px;
-
-    text-decoration: none;
-
-    text-transform: uppercase;
-
-    white-space: nowrap;
-
 }
 
 
+/* ==========================================================
+   MENU
+========================================================== */
+
+.header nav {
+    flex-shrink: 0;
+}
+
 .menu {
+
+    list-style: none;
 
     display: flex;
 
     align-items: center;
 
-    gap: 28px;
-
-    list-style: none;
-
+    gap: 30px;
 }
-
 
 .menu a {
 
     position: relative;
 
-    color: var(--branco);
-
     font-size: 10px;
-
-    font-weight: 400;
-
-    letter-spacing: 2px;
-
-    text-decoration: none;
 
     text-transform: uppercase;
 
-    opacity: 0.65;
+    letter-spacing: 2px;
 
-    transition: var(--transicao);
+    color:
+        rgba(255, 255, 255, 0.68);
 
+    transition:
+        color var(--transicao);
 }
-
-
-.menu a:hover {
-
-    opacity: 1;
-
-}
-
 
 .menu a::after {
 
@@ -176,115 +152,227 @@ body {
     position: absolute;
 
     left: 0;
-
-    bottom: -8px;
+    bottom: -7px;
 
     width: 0;
-
     height: 1px;
 
-    background: var(--branco);
+    background: #fff;
 
-    transition: var(--transicao);
-
+    transition:
+        width var(--transicao);
 }
 
+.menu a:hover {
+
+    color: #fff;
+}
 
 .menu a:hover::after {
 
     width: 100%;
-
 }
 
 
 /* ==========================================================
-   PLAYER DE MÚSICA
+   PLAYER DO TOPO
 ========================================================== */
 
-.music-player {
+.top-player-controls {
+
+    flex-shrink: 1;
 
     display: flex;
 
-    align-items: center;
+    align-items: stretch;
 
-    gap: 6px;
+    gap: 10px;
+
+    margin-left: auto;
+
+    min-width: 0;
 
     white-space: nowrap;
-
 }
 
 
-.music-control {
+/* ==========================================================
+   BOTÕES DO TOPO
 
-    width: 30px;
+   Os botões ocupam visualmente as duas linhas
+   das informações.
+========================================================== */
 
-    height: 30px;
+.top-player-buttons {
 
     display: flex;
 
     align-items: center;
 
+    gap: 4px;
+
+    flex-shrink: 0;
+}
+
+
+.top-player-buttons button {
+
+    width: 28px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
     justify-content: center;
 
     padding: 0;
 
     border:
-        1px solid
-        rgba(255, 255, 255, 0.3);
+        1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius: 50%;
 
     background: transparent;
 
-    color: var(--branco);
+    color:
+        rgba(255, 255, 255, 0.72);
 
     font-size: 10px;
 
     cursor: pointer;
 
-    transition: var(--transicao);
-
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 
-.music-control:hover {
+.top-player-buttons button:hover {
 
-    background: var(--branco);
+    background:
+        rgba(255, 255, 255, 0.09);
 
-    color: var(--preto);
+    border-color:
+        rgba(255, 255, 255, 0.48);
 
+    color: #fff;
+
+    transform: scale(1.05);
 }
 
 
-.music-counter {
+/* Botão Play ligeiramente destacado */
 
-    margin-left: 4px;
+.top-player-buttons button:nth-child(2) {
 
-    color: #888;
+    width: 30px;
+    height: 40px;
 
-    font-size: 9px;
+    border-color:
+        rgba(255, 255, 255, 0.38);
 
-    letter-spacing: 1px;
-
+    color: #fff;
 }
 
 
-.youtube-hidden-player {
+/* ==========================================================
+   INFORMAÇÕES DO TOPO
+========================================================== */
 
-    position: fixed;
+.top-player-info {
 
-    width: 1px;
+    min-width: 0;
 
-    height: 1px;
+    max-width: 300px;
 
-    left: -10px;
+    height: 40px;
 
-    top: -10px;
+    display: flex;
 
-    opacity: 0;
+    flex-direction: column;
 
-    pointer-events: none;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* Tocando agora */
+
+.top-player-label {
+
+    display: block;
+
+    margin-bottom: 2px;
+
+    font-size: 7px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255, 255, 255, 0.34);
+}
+
+
+/* Linha da música */
+
+.top-player-current {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+
+.top-player-current strong {
+
+    display: block;
+
+    min-width: 0;
+
+    max-width: 245px;
 
     overflow: hidden;
 
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.15px;
+
+    color:
+        rgba(255, 255, 255, 0.78);
+}
+
+
+/* Contador */
+
+#topVideoCounter {
+
+    flex-shrink: 0;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color:
+        rgba(255, 255, 255, 0.36);
 }
 
 
@@ -304,29 +392,7 @@ body {
 
     justify-content: center;
 
-    text-align: center;
-
     overflow: hidden;
-
-}
-
-
-.hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.90)
-        );
-
-    z-index: 1;
-
 }
 
 
@@ -336,16 +402,18 @@ body {
 
     inset: 0;
 
-    width: 100%;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.48),
+            rgba(0, 0, 0, 0.72)
+        ),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=90");
 
-    height: 100%;
+    background-size: cover;
 
-    object-fit: cover;
+    background-position: center;
 
     filter: grayscale(100%);
-
-    transform: scale(1.02);
-
 }
 
 
@@ -353,13 +421,11 @@ body {
 
     position: relative;
 
-    max-width: 900px;
-
-    padding:
-        120px 20px 80px;
-
     z-index: 2;
 
+    width: min(900px, 90%);
+
+    text-align: center;
 }
 
 
@@ -367,52 +433,46 @@ body {
 
     display: block;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
-    color: var(--cinza);
-
-    font-size: 11px;
-
-    letter-spacing: 6px;
+    font-size: 10px;
 
     text-transform: uppercase;
 
+    letter-spacing: 4px;
+
+    color:
+        rgba(255, 255, 255, 0.62);
 }
 
 
-.hero-title {
+.hero h1 {
 
-    color: var(--branco);
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    margin-bottom: 25px;
 
     font-size:
-        clamp(55px, 9vw, 120px);
+        clamp(48px, 8vw, 100px);
 
-    font-weight: 400;
+    font-weight: 300;
 
     line-height: 0.95;
 
-    margin-bottom: 35px;
-
+    letter-spacing: -3px;
 }
 
 
-.hero-description {
+.hero p {
 
-    max-width: 600px;
+    max-width: 620px;
 
-    margin: 0 auto;
+    margin: 0 auto 35px;
 
-    color: #d0d0d0;
-
-    font-size: 16px;
+    font-size: 15px;
 
     line-height: 1.8;
 
+    color:
+        rgba(255, 255, 255, 0.72);
 }
 
 
@@ -425,40 +485,37 @@ body {
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
-    min-width: 180px;
+    min-height: 48px;
 
-    margin-top: 40px;
-
-    padding: 15px 25px;
+    padding: 0 28px;
 
     border:
-        1px solid
-        var(--branco);
+        1px solid rgba(255, 255, 255, 0.38);
 
-    color: var(--branco);
+    color: #fff;
 
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    text-decoration: none;
+    font-size: 10px;
 
     text-transform: uppercase;
 
-    transition: var(--transicao);
+    letter-spacing: 2px;
 
+    transition:
+        background var(--transicao),
+        color var(--transicao),
+        border-color var(--transicao);
 }
 
 
 .button:hover {
 
-    background: var(--branco);
+    background: #fff;
 
-    color: var(--preto);
+    border-color: #fff;
 
+    color: #000;
 }
 
 
@@ -468,33 +525,15 @@ body {
 
 .section {
 
-    padding: 140px 0;
-
+    padding:
+        130px 0;
 }
 
+.section-content {
 
-.section-dark {
+    width: min(1200px, 90%);
 
-    background: var(--preto);
-
-}
-
-
-.section-light {
-
-    background: var(--branco);
-
-    color: var(--preto);
-
-}
-
-
-.section-header {
-
-    margin-bottom: 70px;
-
-    text-align: center;
-
+    margin: 0 auto;
 }
 
 
@@ -504,66 +543,133 @@ body {
 
     margin-bottom: 18px;
 
-    color: var(--cinza);
-
-    font-size: 10px;
-
-    letter-spacing: 5px;
+    font-size: 9px;
 
     text-transform: uppercase;
 
+    letter-spacing: 3px;
+
+    color:
+        rgba(255, 255, 255, 0.42);
 }
 
 
-.section-title {
+.section h2 {
 
-    color: var(--branco);
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    margin-bottom: 50px;
 
     font-size:
-        clamp(40px, 6vw, 75px);
+        clamp(38px, 5vw, 68px);
 
-    font-weight: 400;
+    font-weight: 300;
 
-}
-
-
-.text-center {
-
-    max-width: 750px;
-
-    margin: 0 auto;
-
-    color: #d0d0d0;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 20px;
-
-    line-height: 2;
-
-    text-align: center;
-
-}
-
-
-.text-center p + p {
-
-    margin-top: 25px;
-
+    letter-spacing: -2px;
 }
 
 
 /* ==========================================================
-   GALERIA — MOMENTOS
+   HISTÓRIA
 ========================================================== */
+
+.historia {
+
+    background: var(--preto-2);
+}
+
+
+.text-content {
+
+    max-width: 760px;
+}
+
+
+.text-content p {
+
+    margin-bottom: 25px;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+}
+
+
+/* ==========================================================
+   QUOTES
+========================================================== */
+
+.quote-section {
+
+    min-height: 55vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff;
+
+    color: #000;
+
+    text-align: center;
+}
+
+
+.quote-content {
+
+    width: min(900px, 90%);
+}
+
+
+.quote-mark {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 70px;
+
+    font-weight: 200;
+
+    line-height: 0.5;
+}
+
+
+.quote-section blockquote {
+
+    font-size:
+        clamp(28px, 4vw, 52px);
+
+    font-weight: 300;
+
+    line-height: 1.25;
+
+    letter-spacing: -1px;
+}
+
+
+.quote-final {
+
+    background: var(--preto);
+
+    color: #fff;
+}
+
+
+/* ==========================================================
+   MOMENTOS / GALERIA
+========================================================== */
+
+.momentos {
+
+    background: var(--preto);
+}
+
 
 .gallery {
 
@@ -572,101 +678,54 @@ body {
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 10px;
-
+    gap: 15px;
 }
 
 
 .gallery-item {
 
-    position: relative;
-
-    aspect-ratio: 1 / 1;
-
     overflow: hidden;
 
-    background:
-        var(--preto-3);
-
+    background: #111;
 }
 
 
 .gallery-item img {
 
+    display: block;
+
     width: 100%;
 
-    height: 100%;
+    height: 380px;
 
     object-fit: cover;
 
     filter: grayscale(100%);
 
     transition:
-        transform 0.7s ease,
-        filter 0.7s ease;
-
+        filter 0.5s ease,
+        transform 0.5s ease;
 }
 
 
 .gallery-item:hover img {
 
-    transform: scale(1.06);
-
     filter: grayscale(0%);
 
+    transform: scale(1.04);
 }
 
 
-.gallery-item-large {
+.gallery-item:first-child {
 
-    grid-column: span 2;
-
-    grid-row: span 2;
-
+    grid-column:
+        span 2;
 }
 
 
-/* ==========================================================
-   QUOTE
-========================================================== */
+.gallery-item:first-child img {
 
-.quote {
-
-    min-height: 60vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 100px 30px;
-
-    background: var(--branco);
-
-    color: var(--preto);
-
-    text-align: center;
-
-}
-
-
-.quote-text {
-
-    max-width: 1000px;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(35px, 5vw, 65px);
-
-    font-weight: 400;
-
-    line-height: 1.3;
-
+    height: 500px;
 }
 
 
@@ -676,36 +735,31 @@ body {
 
 .playlist-section {
 
-    border-top:
-        1px solid
-        rgba(255, 255, 255, 0.05);
-
+    background: var(--preto-2);
 }
 
 
-.video-playlist {
+.playlist-container {
 
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.7fr)
-        minmax(300px, 0.8fr);
+        minmax(0, 1.5fr)
+        minmax(280px, 0.8fr);
 
-    gap: 35px;
+    gap: 40px;
 
     align-items: start;
-
 }
 
 
 /* ==========================================================
-   VÍDEO
+   PLAYER
 ========================================================== */
 
 .video-main {
 
     min-width: 0;
-
 }
 
 
@@ -717,18 +771,13 @@ body {
 
     aspect-ratio: 16 / 9;
 
-    background: #080808;
+    background: #050505;
 
     overflow: hidden;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.1);
-
 }
 
 
-#video-playlist-player {
+.video-frame iframe {
 
     position: absolute;
 
@@ -738,365 +787,242 @@ body {
 
     height: 100%;
 
+    border: 0;
+}
+
+
+#video-playlist-player {
+
+    width: 100%;
+
+    height: 100%;
+}
+
+
+/* ==========================================================
+   CONTROLES DA PLAYLIST
+========================================================== */
+
+.video-controls {
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        12px 0;
+}
+
+
+.video-controls button {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transicao),
+        border-color var(--transicao),
+        color var(--transicao);
+}
+
+
+.video-controls button:hover {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.45);
+
+    color: #fff;
 }
 
 
 .video-information {
 
+    min-width: 0;
+
+    margin-left: 12px;
+
     display: flex;
 
-    align-items: flex-end;
+    flex-direction: column;
 
-    justify-content: space-between;
-
-    gap: 20px;
-
-    padding:
-        25px 0 15px;
-
-    border-bottom:
-        1px solid
-        var(--borda);
-
+    gap: 3px;
 }
 
 
-.video-label {
+.video-information span {
 
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: #777;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
+    font-size: 8px;
 
     text-transform: uppercase;
 
+    letter-spacing: 1.5px;
+
+    color:
+        rgba(255, 255, 255, 0.32);
 }
 
 
-.video-information h3 {
+.video-information strong {
 
-    color: var(--branco);
+    max-width: 420px;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    overflow: hidden;
 
-    font-size: 29px;
+    text-overflow: ellipsis;
 
-    font-weight: 400;
-
-    line-height: 1.3;
-
-}
-
-
-.video-information p {
-
-    margin-top: 7px;
-
-    color: #777;
+    white-space: nowrap;
 
     font-size: 11px;
 
-    letter-spacing: 1px;
+    font-weight: 400;
 
+    color:
+        rgba(255, 255, 255, 0.75);
 }
 
 
 .video-counter {
 
-    color: #777;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    white-space: nowrap;
-
-}
-
-
-/* ==========================================================
-   CONTROLES DOS VÍDEOS
-========================================================== */
-
-.video-controls {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    padding-top: 20px;
-
-}
-
-
-.video-control {
-
-    width: 42px;
-
-    height: 42px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.25);
-
-    background: transparent;
-
-    color: var(--branco);
-
-    font-size: 12px;
-
-    cursor: pointer;
-
-    transition: var(--transicao);
-
-}
-
-
-.video-control:hover {
-
-    background: var(--branco);
-
-    color: var(--preto);
-
-    border-color:
-        var(--branco);
-
-}
-
-
-.video-control-main {
-
-    width: 50px;
-
-    height: 50px;
-
-    border-color:
-        var(--branco);
-
-}
-
-
-/* ==========================================================
-   LISTA DA PLAYLIST
-========================================================== */
-
-.video-list {
-
-    background: var(--preto-2);
-
-    border:
-        1px solid
-        var(--borda);
-
-}
-
-
-.playlist-header {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 20px;
-
-    border-bottom:
-        1px solid
-        var(--borda);
-
-    color: var(--branco);
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-}
-
-
-.playlist-header span:last-child {
-
-    color: #666;
+    margin-left: auto;
 
     font-size: 9px;
 
     letter-spacing: 1px;
 
+    color:
+        rgba(255, 255, 255, 0.35);
 }
 
 
-.playlist-items {
+/* ==========================================================
+   LISTA PLAYLIST
+========================================================== */
 
-    display: flex;
+.playlist-list {
 
-    flex-direction: column;
-
+    border-top:
+        1px solid var(--borda);
 }
 
 
 .playlist-item {
 
-    position: relative;
-
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        45px 1fr;
-
-    gap: 10px;
+    display: flex;
 
     align-items: center;
 
-    padding: 20px;
+    gap: 18px;
 
-    border: 0;
+    padding: 20px 0;
 
     border-bottom:
-        1px solid
-        rgba(255, 255, 255, 0.07);
-
-    background: transparent;
-
-    color: var(--branco);
-
-    text-align: left;
+        1px solid var(--borda);
 
     cursor: pointer;
 
-    transition: var(--transicao);
-
-}
-
-
-.playlist-item:last-child {
-
-    border-bottom: 0;
-
+    transition:
+        padding var(--transicao),
+        opacity var(--transicao);
 }
 
 
 .playlist-item:hover {
 
-    background: #151515;
+    padding-left: 8px;
+}
 
+
+.playlist-item:not(.active) {
+
+    opacity: 0.52;
 }
 
 
 .playlist-item.active {
 
-    background: #181818;
-
-}
-
-
-.playlist-item.active::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    top: 0;
-
-    bottom: 0;
-
-    width: 2px;
-
-    background: var(--branco);
-
+    opacity: 1;
 }
 
 
 .playlist-number {
 
-    color: #666;
+    flex-shrink: 0;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-size: 10px;
 
-    font-size: 18px;
+    letter-spacing: 1px;
 
+    color:
+        rgba(255, 255, 255, 0.35);
 }
 
 
 .playlist-item.active
 .playlist-number {
 
-    color: var(--branco);
-
+    color: #fff;
 }
 
 
-.playlist-item-content {
+.playlist-details {
+
+    min-width: 0;
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 6px;
-
+    gap: 5px;
 }
 
 
-.playlist-item-content strong {
+.playlist-details strong {
 
-    color: #ddd;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 16px;
+    font-size: 12px;
 
     font-weight: 400;
 
-    line-height: 1.3;
-
+    color:
+        rgba(255, 255, 255, 0.82);
 }
 
 
-.playlist-item.active
-.playlist-item-content strong {
+.playlist-details span {
 
-    color: var(--branco);
+    font-size: 9px;
 
-}
-
-
-.playlist-item-content small {
-
-    color: #666;
-
-    font-size: 10px;
-
-    line-height: 1.4;
-
+    color:
+        rgba(255, 255, 255, 0.35);
 }
 
 
@@ -1104,14 +1030,21 @@ body {
    TIMELINE
 ========================================================== */
 
+.timeline-section {
+
+    padding: 130px 0;
+
+    background: var(--preto);
+}
+
+
 .timeline {
 
     position: relative;
 
-    max-width: 900px;
+    max-width: 850px;
 
     margin: 0 auto;
-
 }
 
 
@@ -1122,7 +1055,6 @@ body {
     position: absolute;
 
     top: 0;
-
     bottom: 0;
 
     left: 50%;
@@ -1130,8 +1062,10 @@ body {
     width: 1px;
 
     background:
-        var(--cinza-escuro);
+        rgba(255, 255, 255, 0.15);
 
+    transform:
+        translateX(-50%);
 }
 
 
@@ -1141,66 +1075,133 @@ body {
 
     width: 50%;
 
-    padding: 30px 50px;
-
+    padding: 0 50px 80px;
 }
 
 
 .timeline-item:nth-child(odd) {
 
-    left: 0;
-
     text-align: right;
-
 }
 
 
 .timeline-item:nth-child(even) {
 
-    left: 50%;
-
+    margin-left: 50%;
 }
 
 
-.timeline-date {
+.timeline-marker {
 
-    margin-bottom: 10px;
+    position: absolute;
 
-    color: var(--cinza);
+    top: 0;
 
-    font-size: 10px;
+    width: 32px;
 
-    letter-spacing: 3px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 50%;
+
+    background: #000;
+
+    font-size: 9px;
+
+    z-index: 2;
+}
+
+
+.timeline-item:nth-child(odd)
+.timeline-marker {
+
+    right: -16px;
+}
+
+
+.timeline-item:nth-child(even)
+.timeline-marker {
+
+    left: -16px;
+}
+
+
+.timeline-content span {
+
+    font-size: 9px;
 
     text-transform: uppercase;
 
+    letter-spacing: 2px;
+
+    color:
+        rgba(255, 255, 255, 0.35);
 }
 
 
-.timeline-title {
+.timeline-content h3 {
 
-    margin-bottom: 10px;
+    margin: 10px 0 15px;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-size: 25px;
 
-    font-size: 28px;
-
-    font-weight: 400;
-
+    font-weight: 300;
 }
 
 
-.timeline-text {
-
-    color: #aaa;
+.timeline-content p {
 
     font-size: 14px;
 
     line-height: 1.8;
 
+    color:
+        rgba(255, 255, 255, 0.55);
+}
+
+
+/* ==========================================================
+   FINAL
+========================================================== */
+
+.final-section {
+
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.9)
+        ),
+        url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.final-section p {
+
+    max-width: 700px;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color:
+        rgba(255, 255, 255, 0.65);
 }
 
 
@@ -1210,36 +1211,34 @@ body {
 
 .footer {
 
-    padding: 50px 20px;
-
-    border-top:
-        1px solid
-        var(--borda);
-
-    background: var(--preto);
-
-    color: #666;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
+    padding: 30px;
 
     text-align: center;
 
+    background: #000;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    color:
+        rgba(255, 255, 255, 0.32);
+
+    font-size: 9px;
+
     text-transform: uppercase;
 
+    letter-spacing: 2px;
 }
 
 
 /* ==========================================================
-   ANIMAÇÃO
+   FADE IN
 ========================================================== */
 
 .fade-in {
 
     animation:
         fadeIn 1.2s ease forwards;
-
 }
 
 
@@ -1267,23 +1266,60 @@ body {
 
 
 /* ==========================================================
-   TABLET
+   RESPONSIVO — PLAYER DO TOPO
 ========================================================== */
 
-@media (max-width: 1100px) {
-
+@media (max-width: 1200px) {
 
     .header-content {
 
-        gap: 12px;
-
+        gap: 18px;
     }
 
 
     .menu {
 
-        gap: 18px;
+        gap: 20px;
+    }
 
+
+    .top-player-controls {
+
+        gap: 7px;
+    }
+
+
+    .top-player-info {
+
+        max-width: 230px;
+    }
+
+
+    .top-player-current strong {
+
+        max-width: 180px;
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .header-content {
+
+        min-height: 76px;
+
+        gap: 12px;
+    }
+
+
+    .menu {
+
+        gap: 14px;
     }
 
 
@@ -1291,39 +1327,136 @@ body {
 
         font-size: 9px;
 
+        letter-spacing: 1.3px;
     }
 
 
-    .video-playlist {
+    .top-player-label {
+
+        display: none;
+    }
+
+
+    .top-player-info {
+
+        height: 38px;
+
+        max-width: 190px;
+    }
+
+
+    .top-player-current strong {
+
+        max-width: 145px;
+
+        font-size: 9px;
+    }
+
+
+    .top-player-buttons button {
+
+        width: 26px;
+
+        height: 36px;
+    }
+
+
+    .top-player-buttons button:nth-child(2) {
+
+        width: 28px;
+
+        height: 38px;
+    }
+
+
+    .playlist-container {
 
         grid-template-columns: 1fr;
-
     }
 
 
-    .video-list {
-
-        width: 100%;
-
-    }
-
-
-    .playlist-items {
-
-        display: grid;
+    .gallery {
 
         grid-template-columns:
             repeat(2, 1fr);
+    }
 
+}
+
+
+/* ==========================================================
+   TABLET MENOR
+========================================================== */
+
+@media (max-width: 800px) {
+
+    .header-content {
+
+        min-height: 70px;
     }
 
 
-    .playlist-item:nth-child(odd) {
+    .logo {
 
-        border-right:
-            1px solid
-            rgba(255, 255, 255, 0.07);
+        font-size: 15px;
 
+        letter-spacing: 4px;
+    }
+
+
+    .menu {
+
+        gap: 11px;
+    }
+
+
+    .menu li:nth-child(3) {
+
+        display: none;
+    }
+
+
+    .top-player-info {
+
+        max-width: 155px;
+    }
+
+
+    .top-player-current strong {
+
+        max-width: 120px;
+
+        font-size: 8px;
+    }
+
+
+    #topVideoCounter {
+
+        font-size: 7px;
+    }
+
+
+    .top-player-buttons {
+
+        gap: 3px;
+    }
+
+
+    .top-player-buttons button {
+
+        width: 24px;
+
+        height: 34px;
+
+        font-size: 9px;
+    }
+
+
+    .top-player-buttons button:nth-child(2) {
+
+        width: 26px;
+
+        height: 36px;
     }
 
 }
@@ -1333,36 +1466,37 @@ body {
    CELULAR
 ========================================================== */
 
-@media (max-width: 768px) {
-
-
-    .header {
-
-        height: 70px;
-
-    }
-
+@media (max-width: 650px) {
 
     .header-content {
 
         width: 94%;
 
-        gap: 10px;
+        min-height: 64px;
 
+        gap: 8px;
     }
 
 
     .logo {
 
-        display: none;
+        font-size: 13px;
 
+        letter-spacing: 3px;
     }
 
 
     .menu {
 
-        gap: 12px;
+        gap: 9px;
+    }
 
+
+    .menu li:nth-child(3),
+    .menu li:nth-child(4),
+    .menu li:nth-child(5) {
+
+        display: none;
     }
 
 
@@ -1371,114 +1505,162 @@ body {
         font-size: 8px;
 
         letter-spacing: 1px;
-
     }
 
 
-    .music-player {
+    .top-player-controls {
 
-        gap: 3px;
-
+        gap: 5px;
     }
 
 
-    .music-control {
+    .top-player-info {
 
-        width: 26px;
-
-        height: 26px;
-
-        font-size: 9px;
-
+        max-width: 125px;
     }
 
 
-    .music-counter {
+    .top-player-current {
+
+        gap: 5px;
+    }
+
+
+    .top-player-current strong {
+
+        max-width: 92px;
+
+        font-size: 7px;
+    }
+
+
+    .top-player-label {
+
+        display: block;
+
+        font-size: 6px;
+
+        letter-spacing: 1px;
+    }
+
+
+    #topVideoCounter {
+
+        font-size: 6px;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    .top-player-buttons {
+
+        gap: 2px;
+    }
+
+
+    .top-player-buttons button {
+
+        width: 22px;
+
+        height: 32px;
 
         font-size: 8px;
-
     }
 
 
-    .hero-title {
+    .top-player-buttons button:nth-child(2) {
 
-        font-size: 60px;
+        width: 24px;
 
+        height: 34px;
     }
 
 
     .section {
 
         padding: 90px 0;
+    }
 
+
+    .hero h1 {
+
+        letter-spacing: -2px;
     }
 
 
     .gallery {
 
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .gallery-item-large {
-
-        grid-column: span 2;
-
-        grid-row: span 1;
-
-    }
-
-
-    .video-information {
-
-        align-items: flex-start;
-
-    }
-
-
-    .video-information h3 {
-
-        font-size: 25px;
-
-    }
-
-
-    .playlist-items {
-
         grid-template-columns: 1fr;
-
     }
 
 
-    .playlist-item:nth-child(odd) {
+    .gallery-item:first-child {
 
-        border-right: 0;
+        grid-column: auto;
+    }
 
+
+    .gallery-item img,
+    .gallery-item:first-child img {
+
+        height: 360px;
     }
 
 
     .timeline::before {
 
-        left: 10px;
+        left: 15px;
 
+        transform: none;
     }
 
 
     .timeline-item,
-    .timeline-item:nth-child(even),
-    .timeline-item:nth-child(odd) {
-
-        left: 0;
+    .timeline-item:nth-child(even) {
 
         width: 100%;
 
+        margin-left: 0;
+
         padding:
-            25px 25px 25px 40px;
+            0 0 60px 50px;
 
         text-align: left;
+    }
 
+
+    .timeline-item:nth-child(odd)
+    .timeline-marker,
+    .timeline-item:nth-child(even)
+    .timeline-marker {
+
+        left: 0;
+
+        right: auto;
+    }
+
+
+    .video-controls {
+
+        flex-wrap: wrap;
+    }
+
+
+    .video-information {
+
+        order: 2;
+
+        width: 100%;
+
+        margin-left: 0;
+
+        margin-top: 6px;
+    }
+
+
+    .video-counter {
+
+        order: 1;
     }
 
 }
@@ -1490,98 +1672,85 @@ body {
 
 @media (max-width: 480px) {
 
-
     .header-content {
 
-        width: 97%;
+        gap: 5px;
+    }
 
+
+    .logo {
+
+        display: none;
     }
 
 
     .menu {
 
-        gap: 7px;
-
+        gap: 8px;
     }
 
 
-    .menu a {
+    .top-player-controls {
+
+        margin-left: auto;
+    }
+
+
+    .top-player-info {
+
+        max-width: 105px;
+    }
+
+
+    .top-player-current strong {
+
+        max-width: 75px;
+
+        font-size: 6.5px;
+    }
+
+
+    .top-player-label {
+
+        font-size: 5.5px;
+    }
+
+
+    #topVideoCounter {
+
+        font-size: 5.5px;
+    }
+
+
+    .top-player-buttons button {
+
+        width: 20px;
+
+        height: 30px;
 
         font-size: 7px;
-
-        letter-spacing: 0.5px;
-
     }
 
 
-    .music-control {
+    .top-player-buttons button:nth-child(2) {
 
-        width: 23px;
+        width: 22px;
 
-        height: 23px;
-
+        height: 32px;
     }
 
 
-    .hero-title {
+    .hero p {
 
-        font-size: 48px;
-
+        font-size: 13px;
     }
 
 
-    .hero-description {
+    .video-controls button {
 
-        font-size: 14px;
+        width: 31px;
 
-    }
-
-
-    .gallery {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .gallery-item-large {
-
-        grid-column: span 1;
-
-    }
-
-
-    .video-information {
-
-        flex-direction: column;
-
-        gap: 12px;
-
-    }
-
-
-    .video-information h3 {
-
-        font-size: 22px;
-
-    }
-
-
-    .video-control {
-
-        width: 38px;
-
-        height: 38px;
-
-    }
-
-
-    .video-control-main {
-
-        width: 46px;
-
-        height: 46px;
-
+        height: 31px;
     }
 
 }
