@@ -8,47 +8,35 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+        content="width=device-width, initial-scale=1.0">
 
     <meta
         name="referrer"
-        content="strict-origin-when-cross-origin"
-    >
+        content="strict-origin-when-cross-origin">
 
     <title>Nossa História</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css">
 
 </head>
 
-
 <body>
 
-
     <!-- ==========================================================
-         CABEÇALHO
-         
-         Navegação + controles sincronizados da playlist.
-         
-         IMPORTANTE:
-         Os controles abaixo NÃO possuem outro player.
-         Eles controlam o único player da seção Playlist.
+         HEADER
     =========================================================== -->
 
     <header class="header">
 
         <div class="header-content">
 
-
             <a
                 href="#inicio"
                 class="logo">
-
                 NÓS
-
             </a>
-
 
             <nav>
 
@@ -60,13 +48,11 @@
                         </a>
                     </li>
 
-
                     <li>
                         <a href="#historia">
                             História
                         </a>
                     </li>
-
 
                     <li>
                         <a href="#momentos">
@@ -74,13 +60,11 @@
                         </a>
                     </li>
 
-
                     <li>
                         <a href="#playlist">
                             Playlist
                         </a>
                     </li>
-
 
                     <li>
                         <a href="#final">
@@ -93,163 +77,103 @@
             </nav>
 
 
-            <!-- ==================================================
-                 CONTROLES DO PLAYER NO TOPO
-                 
-                 Estes controles controlam o MESMO player
-                 que está dentro da seção Playlist.
-            =================================================== -->
+            <!-- CONTROLES DO MESMO PLAYER DA PLAYLIST -->
 
             <div class="top-player-controls">
 
-
-                <div class="top-player-info">
-
-
-                    <span class="top-player-label">
-
-                        Tocando agora
-
-                    </span>
-
-
-                    <strong id="topVideoTitle">
-
-                        Marcos &amp; Belutti — Sonho De Todo Casal
-
-                    </strong>
-
-
-                </div>
-
-
-                <span
-                    class="top-player-counter"
-                    id="topVideoCounter">
-
-                    01 / 04
-
-                </span>
-
-
                 <div class="top-player-buttons">
-
 
                     <button
                         type="button"
                         id="topVideoPrevious"
                         title="Vídeo anterior"
                         aria-label="Vídeo anterior">
-
                         ⏮
-
                     </button>
-
 
                     <button
                         type="button"
                         id="topVideoPlay"
                         title="Reproduzir"
                         aria-label="Reproduzir">
-
                         ▶
-
                     </button>
-
 
                     <button
                         type="button"
                         id="topVideoPause"
                         title="Pausar"
                         aria-label="Pausar">
-
                         ❚❚
-
                     </button>
-
 
                     <button
                         type="button"
                         id="topVideoNext"
                         title="Próximo vídeo"
                         aria-label="Próximo vídeo">
-
                         ⏭
-
                     </button>
-
 
                 </div>
 
+                <div class="top-player-info">
+
+                    <span class="top-player-label">
+                        Tocando agora:
+                    </span>
+
+                    <strong id="topVideoTitle">
+                        Marcos &amp; Belutti — Sonho De Todo Casal
+                    </strong>
+
+                </div>
 
             </div>
-
 
         </div>
 
     </header>
 
 
+    <!-- ==========================================================
+         INÍCIO
+    =========================================================== -->
 
     <main>
 
-
-        <!-- ======================================================
-             INÍCIO
-        ======================================================= -->
-
         <section
-            class="hero"
-            id="inicio">
+            id="inicio"
+            class="hero">
 
-
-            <img
-                class="hero-image"
-                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=2000&q=85"
-                alt="Nossa história">
-
+            <div class="hero-image"></div>
 
             <div class="hero-content fade-in">
 
-
                 <span class="hero-subtitle">
-
                     Uma história que continua
-
                 </span>
 
-
-                <h1 class="hero-title">
-
-                    Meu amor,<br>
-                    minha vida.
-
+                <h1>
+                    Meu amor, minha vida.
                 </h1>
 
-
-                <p class="hero-description">
-
-                    Entre tantos caminhos que a vida poderia ter escolhido,
-                    ela colocou você no meu. E foi assim que começou a nossa história.
-
+                <p>
+                    Entre tantos caminhos que a vida poderia ter
+                    escolhido, ela colocou você no meu.
+                    E foi assim que começou a nossa história.
                 </p>
-
 
                 <a
                     href="#historia"
-                    class="button"
-                    id="startStory">
-
+                    id="startStory"
+                    class="button">
                     Nossa história
-
                 </a>
-
 
             </div>
 
-
         </section>
-
 
 
         <!-- ======================================================
@@ -257,123 +181,88 @@
         ======================================================= -->
 
         <section
-            class="section section-dark"
-            id="historia">
+            id="historia"
+            class="section historia">
 
+            <div class="section-content">
 
-            <div class="container">
+                <span class="section-label">
+                    Nossa história
+                </span>
 
+                <h2>
+                    Nossa história
+                </h2>
 
-                <div class="section-header">
-
-                    <span class="section-label">
-
-                        Sobre nós
-
-                    </span>
-
-
-                    <h2 class="section-title">
-
-                        Nossa história
-
-                    </h2>
-
-                </div>
-
-
-                <div class="text-center">
-
+                <div class="text-content">
 
                     <p>
-
-                        Meu amor, já se passaram muitos aniversários seus
-                        e eu me sinto realizado por poder fazer parte de cada
-                        uma dessas datas tão especiais.
-
+                        Meu amor, já se passaram muitos aniversários
+                        seus e eu me sinto realizado por poder fazer
+                        parte de cada uma dessas datas tão especiais.
                     </p>
 
-
                     <p>
-
                         A cada ano crescemos juntos, aprendemos juntos
                         e construímos mais uma parte da nossa vida.
-
                     </p>
-
 
                     <p>
-
                         Você se tornou uma parte tão importante de mim
-                        que eu já não consigo imaginar meus dias sem pensar em você.
-
+                        que eu já não consigo imaginar meus dias sem
+                        pensar em você.
                     </p>
 
-
                 </div>
-
 
             </div>
 
-
         </section>
-
 
 
         <!-- ======================================================
              FRASE
         ======================================================= -->
 
-        <section class="quote">
+        <section class="quote-section">
 
+            <div class="quote-content">
 
-            <p class="quote-text">
+                <span class="quote-mark">
+                    “
+                </span>
 
-                De todas as histórias que eu poderia viver,
-                a minha favorita sempre será a nossa.
+                <blockquote>
+                    De todas as histórias que eu poderia viver,
+                    a minha favorita sempre será a nossa.
+                </blockquote>
 
-            </p>
-
+            </div>
 
         </section>
 
 
-
         <!-- ======================================================
-             MOMENTOS — FOTOS
+             MOMENTOS
         ======================================================= -->
 
         <section
-            class="section section-dark"
-            id="momentos">
+            id="momentos"
+            class="section momentos">
 
+            <div class="section-content">
 
-            <div class="container">
+                <span class="section-label">
+                    Momentos
+                </span>
 
-
-                <div class="section-header">
-
-                    <span class="section-label">
-
-                        Nossas lembranças
-
-                    </span>
-
-
-                    <h2 class="section-title">
-
-                        Momentos
-
-                    </h2>
-
-                </div>
-
-
+                <h2>
+                    Nossas lembranças
+                </h2>
 
                 <div class="gallery">
 
-
-                    <div class="gallery-item gallery-item-large">
+                    <div class="gallery-item">
 
                         <img
                             src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=85"
@@ -381,354 +270,202 @@
 
                     </div>
 
-
                     <div class="gallery-item">
 
                         <img
                             src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85"
-                            alt="Nossa lembrança">
+                            alt="Momento especial">
 
                     </div>
-
 
                     <div class="gallery-item">
 
                         <img
                             src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=85"
-                            alt="Nossa história">
+                            alt="Momento especial">
 
                     </div>
-
 
                     <div class="gallery-item">
 
                         <img
                             src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=85"
-                            alt="Um momento nosso">
+                            alt="Momento especial">
 
                     </div>
-
 
                     <div class="gallery-item">
 
                         <img
                             src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1000&q=85"
-                            alt="Nossa vida juntos">
+                            alt="Momento especial">
 
                     </div>
 
-
                 </div>
-
 
             </div>
 
-
         </section>
-
 
 
         <!-- ======================================================
              PLAYLIST
-             
-             ESTE É O ÚNICO PLAYER DO SITE.
-             
-             Os comandos do cabeçalho controlam este player.
+             ÚNICO PLAYER DA PÁGINA
         ======================================================= -->
 
         <section
-            class="section section-dark playlist-section"
-            id="playlist">
+            id="playlist"
+            class="section playlist-section">
+
+            <div class="section-content">
+
+                <span class="section-label">
+                    Playlist
+                </span>
+
+                <h2>
+                    Algumas músicas da nossa história
+                </h2>
 
 
-            <div class="container">
+                <div class="playlist-container">
 
 
-                <div class="section-header">
-
-
-                    <span class="section-label">
-
-                        Nossas músicas
-
-                    </span>
-
-
-                    <h2 class="section-title">
-
-                        Playlist
-
-                    </h2>
-
-
-                </div>
-
-
-
-                <div class="video-playlist">
-
-
-                    <!-- ==================================================
-                         PLAYER ÚNICO
-                    =================================================== -->
+                    <!-- PLAYER -->
 
                     <div class="video-main">
 
-
                         <div class="video-frame">
 
+                            <div id="video-playlist-player"></div>
 
-                            <div
-                                id="video-playlist-player">
+                        </div>
+
+                    </div>
+
+
+                    <!-- LISTA -->
+
+                    <div class="playlist-list">
+
+
+                        <div
+                            class="playlist-item active"
+                            data-video="0">
+
+                            <div class="playlist-number">
+                                01
                             </div>
 
+                            <div class="playlist-details">
+
+                                <strong>
+                                    Marcos &amp; Belutti — Sonho De Todo Casal
+                                </strong>
+
+                                <span>
+                                    Energia
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="playlist-item"
+                            data-video="1">
+
+                            <div class="playlist-number">
+                                02
+                            </div>
+
+                            <div class="playlist-details">
+
+                                <strong>
+                                    Henrique e Juliano — Realidade ou Fantasia
+                                </strong>
+
+                                <span>
+                                    DVD To Be Brasilia
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="playlist-item"
+                            data-video="2">
+
+                            <div class="playlist-number">
+                                03
+                            </div>
+
+                            <div class="playlist-details">
+
+                                <strong>
+                                    Charlie Brown Jr. — Me Encontra
+                                </strong>
+
+                                <span>
+                                    LETRA / LEGENDADO
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="playlist-item"
+                            data-video="3">
+
+                            <div class="playlist-number">
+                                04
+                            </div>
+
+                            <div class="playlist-details">
+
+                                <strong>
+                                    Panda — Eu te seguro
+                                </strong>
+
+                                <span>
+                                    Panda sem Moderação 2
+                                </span>
+
+                            </div>
 
                         </div>
 
 
                     </div>
 
-
-
-                    <!-- ==================================================
-                         LISTA DA ÚNICA PLAYLIST
-                    =================================================== -->
-
-                    <aside class="video-list">
-
-
-                        <div class="playlist-header">
-
-
-                            <span>
-
-                                Nossa playlist
-
-                            </span>
-
-
-                            <span>
-
-                                04 músicas
-
-                            </span>
-
-
-                        </div>
-
-
-
-                        <div class="playlist-items">
-
-
-                            <!-- ==================================================
-                                 01
-                            =================================================== -->
-
-                            <button
-                                type="button"
-                                class="playlist-item active"
-                                data-video="0">
-
-
-                                <span class="playlist-number">
-
-                                    01
-
-                                </span>
-
-
-                                <span class="playlist-item-content">
-
-
-                                    <strong>
-
-                                        Sonho De Todo Casal
-
-                                    </strong>
-
-
-                                    <small>
-
-                                        Marcos &amp; Belutti — Energia
-
-                                    </small>
-
-
-                                </span>
-
-
-                            </button>
-
-
-
-                            <!-- ==================================================
-                                 02
-                            =================================================== -->
-
-                            <button
-                                type="button"
-                                class="playlist-item"
-                                data-video="1">
-
-
-                                <span class="playlist-number">
-
-                                    02
-
-                                </span>
-
-
-                                <span class="playlist-item-content">
-
-
-                                    <strong>
-
-                                        Realidade ou Fantasia
-
-                                    </strong>
-
-
-                                    <small>
-
-                                        Henrique e Juliano — DVD To Be Brasilia
-
-                                    </small>
-
-
-                                </span>
-
-
-                            </button>
-
-
-
-                            <!-- ==================================================
-                                 03
-                            =================================================== -->
-
-                            <button
-                                type="button"
-                                class="playlist-item"
-                                data-video="2">
-
-
-                                <span class="playlist-number">
-
-                                    03
-
-                                </span>
-
-
-                                <span class="playlist-item-content">
-
-
-                                    <strong>
-
-                                        Me Encontra
-
-                                    </strong>
-
-
-                                    <small>
-
-                                        Charlie Brown Jr. — LETRA / LEGENDADO
-
-                                    </small>
-
-
-                                </span>
-
-
-                            </button>
-
-
-
-                            <!-- ==================================================
-                                 04
-                            =================================================== -->
-
-                            <button
-                                type="button"
-                                class="playlist-item"
-                                data-video="3">
-
-
-                                <span class="playlist-number">
-
-                                    04
-
-                                </span>
-
-
-                                <span class="playlist-item-content">
-
-
-                                    <strong>
-
-                                        Eu te seguro
-
-                                    </strong>
-
-
-                                    <small>
-
-                                        Panda — Panda sem Moderação 2
-
-                                    </small>
-
-
-                                </span>
-
-
-                            </button>
-
-
-                        </div>
-
-
-                    </aside>
-
-
                 </div>
-
 
             </div>
 
-
         </section>
-
 
 
         <!-- ======================================================
              CAMINHADA
         ======================================================= -->
 
-        <section class="section section-dark">
+        <section class="timeline-section">
 
+            <div class="section-content">
 
-            <div class="container">
+                <span class="section-label">
+                    Nossa caminhada
+                </span>
 
-
-                <div class="section-header">
-
-
-                    <span class="section-label">
-
-                        Nossa caminhada
-
-                    </span>
-
-
-                    <h2 class="section-title">
-
-                        Momentos que ficaram
-
-                    </h2>
-
-
-                </div>
-
+                <h2>
+                    Tudo que vivemos
+                </h2>
 
 
                 <div class="timeline">
@@ -736,267 +473,208 @@
 
                     <div class="timeline-item">
 
-
-                        <div class="timeline-date">
-
-                            O começo
-
+                        <div class="timeline-marker">
+                            01
                         </div>
 
+                        <div class="timeline-content">
 
-                        <h3 class="timeline-title">
+                            <span>
+                                O começo
+                            </span>
 
-                            Quando tudo começou
+                            <h3>
+                                Quando tudo começou
+                            </h3>
 
-                        </h3>
+                            <p>
+                                Um momento que talvez parecesse
+                                simples naquele dia, mas que acabou
+                                mudando nossas vidas para sempre.
+                            </p>
 
-
-                        <p class="timeline-text">
-
-                            Um momento que talvez parecesse simples naquele dia,
-                            mas que acabou mudando nossas vidas para sempre.
-
-                        </p>
-
+                        </div>
 
                     </div>
 
 
-
                     <div class="timeline-item">
 
-
-                        <div class="timeline-date">
-
-                            Um novo capítulo
-
+                        <div class="timeline-marker">
+                            02
                         </div>
 
+                        <div class="timeline-content">
 
-                        <h3 class="timeline-title">
+                            <span>
+                                Um novo capítulo
+                            </span>
 
-                            Mais uma história
+                            <h3>
+                                Mais uma história
+                            </h3>
 
-                        </h3>
+                            <p>
+                                Vieram novos momentos, novos sonhos
+                                e muitas lembranças que hoje fazem
+                                parte de quem somos.
+                            </p>
 
-
-                        <p class="timeline-text">
-
-                            Vieram novos momentos, novos sonhos e muitas lembranças
-                            que hoje fazem parte de quem somos.
-
-                        </p>
-
+                        </div>
 
                     </div>
 
 
-
                     <div class="timeline-item">
 
-
-                        <div class="timeline-date">
-
-                            Hoje
-
+                        <div class="timeline-marker">
+                            03
                         </div>
 
+                        <div class="timeline-content">
 
-                        <h3 class="timeline-title">
+                            <span>
+                                Hoje
+                            </span>
 
-                            Ainda nós
+                            <h3>
+                                Ainda nós
+                            </h3>
 
-                        </h3>
+                            <p>
+                                E depois de tudo que vivemos,
+                                continuamos escolhendo um ao outro
+                                todos os dias.
+                            </p>
 
-
-                        <p class="timeline-text">
-
-                            E depois de tudo que vivemos, continuamos escolhendo
-                            um ao outro todos os dias.
-
-                        </p>
-
+                        </div>
 
                     </div>
 
 
                 </div>
 
-
             </div>
 
-
         </section>
-
 
 
         <!-- ======================================================
              FRASE FINAL
         ======================================================= -->
 
-        <section
-            class="quote"
-            id="final">
+        <section class="quote-section quote-final">
 
+            <div class="quote-content">
 
-            <p class="quote-text">
+                <span class="quote-mark">
+                    “
+                </span>
 
-                Eu escolheria você.
-                Hoje, amanhã e em todas as vezes.
+                <blockquote>
+                    Eu escolheria você. Hoje, amanhã e em todas
+                    as vezes.
+                </blockquote>
 
-            </p>
-
+            </div>
 
         </section>
-
 
 
         <!-- ======================================================
              FINAL
         ======================================================= -->
 
-        <section class="section section-dark">
+        <section
+            id="final"
+            class="section final-section">
 
+            <div class="section-content">
 
-            <div class="container">
+                <span class="section-label">
+                    Para sempre
+                </span>
 
+                <h2>
+                    Ainda somos nós.
+                </h2>
 
-                <div class="section-header">
-
-
-                    <span class="section-label">
-
-                        Para sempre
-
-                    </span>
-
-
-                    <h2 class="section-title">
-
-                        Ainda somos nós.
-
-                    </h2>
-
-
-                </div>
-
-
-
-                <p class="text-center">
-
-
-                    Ainda teremos muitos aniversários para comemorar,
-                    viagens para fazer, risadas para compartilhar,
-                    desafios para superar e muitos capítulos para escrever.
-
-
-                    <br><br>
-
-
-                    E se depender de mim, quero continuar escrevendo
-                    todos eles ao seu lado.
-
-
+                <p>
+                    Entre aniversários, viagens, risadas, desafios
+                    e todos os momentos que ainda estão por vir,
+                    existe uma certeza que permanece:
+                    continuar escrevendo nossos capítulos juntos.
                 </p>
-
 
             </div>
 
-
         </section>
-
 
     </main>
 
 
-
     <!-- ==========================================================
-         RODAPÉ
+         FOOTER
     =========================================================== -->
 
     <footer class="footer">
 
-        Feito para nós
+        <span>
+            Feito para nós
+        </span>
 
     </footer>
 
 
-
     <!-- ==========================================================
-         YOUTUBE IFRAME API
-         
-         APENAS UM PLAYER É CRIADO.
+         YOUTUBE API
     =========================================================== -->
 
     <script src="https://www.youtube.com/iframe_api"></script>
 
 
+    <!-- ==========================================================
+         JAVASCRIPT
+    =========================================================== -->
 
     <script>
 
-
-        /* ==========================================================
-           ÚNICA PLAYLIST DO SITE
-        =========================================================== */
-
         const playlist = [
-
 
             {
                 id: "oejyRpHiP2M",
-
                 titulo:
                     "Marcos & Belutti — Sonho De Todo Casal",
-
                 descricao:
                     "Energia"
-
             },
-
 
             {
                 id: "_k2ty4A5x1w",
-
                 titulo:
                     "Henrique e Juliano — Realidade ou Fantasia",
-
                 descricao:
                     "DVD To Be Brasilia"
-
             },
-
 
             {
                 id: "ZbkshrKvgIg",
-
                 titulo:
                     "Charlie Brown Jr. — Me Encontra",
-
                 descricao:
                     "LETRA / LEGENDADO"
-
             },
-
 
             {
                 id: "kI6ywewtYkc",
-
                 titulo:
                     "Panda — Eu te seguro",
-
                 descricao:
                     "Panda sem Moderação 2"
-
             }
-
 
         ];
 
-
-
-        /* ==========================================================
-           ESTADO ÚNICO
-        =========================================================== */
 
         let playlistAtual = 0;
 
@@ -1005,15 +683,11 @@
         let videoPlayerPronto = false;
 
 
-
-        /* ==========================================================
-           YOUTUBE IFRAME API
-           
-           CRIA SOMENTE UM PLAYER.
-        =========================================================== */
+        /* ======================================================
+           CRIA O ÚNICO PLAYER
+        ======================================================= */
 
         function onYouTubeIframeAPIReady() {
-
 
             const origem =
                 window.location.origin;
@@ -1024,101 +698,69 @@
                     "video-playlist-player",
                     {
 
-
                         width: "100%",
 
-
                         height: "100%",
-
 
                         videoId:
                             playlist[
                                 playlistAtual
                             ].id,
 
-
                         playerVars: {
-
 
                             autoplay: 0,
 
-
                             controls: 1,
-
 
                             modestbranding: 1,
 
-
                             playsinline: 1,
-
 
                             rel: 0,
 
-
-                            origin:
-                                origem
-
+                            origin: origem
 
                         },
 
-
                         events: {
-
 
                             onReady:
                                 function () {
 
-
                                     videoPlayerPronto =
                                         true;
 
-
                                     atualizarPlaylistInterface();
 
-
                                 },
-
 
                             onStateChange:
                                 controlarEstadoVideo,
 
-
                             onError:
                                 function (evento) {
-
 
                                     console.error(
                                         "Erro YouTube:",
                                         evento.data
                                     );
 
-
                                 }
 
-
                         }
-
 
                     }
                 );
 
-
         }
 
 
-
-        /* ==========================================================
-           ATUALIZAR INTERFACE DA PLAYLIST
-           
-           Atualiza:
-           
-           - Título dentro do topo
-           - Contador dentro do topo
-           - Item ativo da playlist
-        =========================================================== */
+        /* ======================================================
+           ATUALIZA INTERFACE
+        ======================================================= */
 
         function atualizarPlaylistInterface() {
-
 
             const video =
                 playlist[
@@ -1126,18 +768,9 @@
                 ];
 
 
-
             if (!video) {
-
                 return;
-
             }
-
-
-
-            /* ======================================================
-               TOPO
-            ======================================================= */
 
 
             const topVideoTitle =
@@ -1146,53 +779,12 @@
                 );
 
 
-            const topVideoCounter =
-                document.getElementById(
-                    "topVideoCounter"
-                );
-
-
-
             if (topVideoTitle) {
-
 
                 topVideoTitle.textContent =
                     video.titulo;
 
-
             }
-
-
-
-            if (topVideoCounter) {
-
-
-                topVideoCounter.textContent =
-
-                    String(
-                        playlistAtual + 1
-                    ).padStart(
-                        2,
-                        "0"
-                    )
-
-                    + " / " +
-
-                    String(
-                        playlist.length
-                    ).padStart(
-                        2,
-                        "0"
-                    );
-
-
-            }
-
-
-
-            /* ======================================================
-               ITEM ATIVO DA PLAYLIST
-            ======================================================= */
 
 
             document
@@ -1205,47 +797,30 @@
                         indice
                     ) {
 
-
                         item.classList.toggle(
-
                             "active",
-
-                            indice ===
-                            playlistAtual
-
+                            indice === playlistAtual
                         );
-
 
                     }
                 );
 
-
         }
 
 
-
-        /* ==========================================================
-           CARREGAR VÍDEO
-        =========================================================== */
+        /* ======================================================
+           CARREGA VÍDEO
+        ======================================================= */
 
         function carregarVideo(
             indice,
             reproduzir = true
         ) {
 
-
             if (!videoPlayerPronto) {
-
                 return;
-
             }
 
-
-
-            /*
-             * Se passar do último,
-             * volta para o primeiro.
-             */
 
             if (
                 indice >=
@@ -1257,12 +832,6 @@
             }
 
 
-
-            /*
-             * Se voltar antes do primeiro,
-             * vai para o último.
-             */
-
             if (indice < 0) {
 
                 indice =
@@ -1271,29 +840,12 @@
             }
 
 
-
-            /*
-             * Atualiza o índice único.
-             */
-
             playlistAtual =
                 indice;
 
 
-
-            /*
-             * Atualiza o topo e
-             * a playlist.
-             */
-
             atualizarPlaylistInterface();
 
-
-
-            /*
-             * Carrega o vídeo no
-             * único player.
-             */
 
             videoPlayer.loadVideoById({
 
@@ -1305,140 +857,99 @@
             });
 
 
-
-            /*
-             * Reproduz quando solicitado.
-             */
-
             if (reproduzir) {
 
                 videoPlayer.playVideo();
 
             }
 
-
         }
 
 
-
-        /* ==========================================================
+        /* ======================================================
            VÍDEO ANTERIOR
-        =========================================================== */
+        ======================================================= */
 
         function videoAnterior() {
 
-
             carregarVideo(
-
                 playlistAtual - 1,
-
                 true
-
             );
-
 
         }
 
 
-
-        /* ==========================================================
+        /* ======================================================
            PRÓXIMO VÍDEO
-        =========================================================== */
+        ======================================================= */
 
         function proximoVideo() {
 
-
             carregarVideo(
-
                 playlistAtual + 1,
-
                 true
-
             );
-
 
         }
 
 
-
-        /* ==========================================================
-           PLAY
-        =========================================================== */
+        /* ======================================================
+           REPRODUZIR
+        ======================================================= */
 
         function reproduzirVideo() {
 
-
             if (!videoPlayerPronto) {
-
                 return;
-
             }
-
 
             videoPlayer.playVideo();
 
-
         }
 
 
-
-        /* ==========================================================
-           PAUSE
-        =========================================================== */
+        /* ======================================================
+           PAUSAR
+        ======================================================= */
 
         function pausarVideo() {
 
-
             if (!videoPlayerPronto) {
-
                 return;
-
             }
 
-
             videoPlayer.pauseVideo();
-
 
         }
 
 
-
-        /* ==========================================================
-           VÍDEO TERMINOU
-           
-           01 → 02
-           02 → 03
-           03 → 04
-           04 → 01
-        =========================================================== */
+        /* ======================================================
+           ESTADO DO PLAYER
+        ======================================================= */
 
         function controlarEstadoVideo(
             evento
         ) {
-
 
             if (
                 evento.data ===
                 YT.PlayerState.ENDED
             ) {
 
-
                 proximoVideo();
 
-
             }
-
 
         }
 
 
-
-        /* ==========================================================
+        /* ======================================================
            BOTÃO "NOSSA HISTÓRIA"
-           
-           Inicia o vídeo 01 no único player
-           e depois leva o usuário para História.
-        =========================================================== */
+
+           Inicia o primeiro vídeo usando
+           o mesmo player da Playlist.
+        ======================================================= */
 
         document
             .getElementById(
@@ -1448,32 +959,19 @@
                 "click",
                 function (evento) {
 
-
                     evento.preventDefault();
 
 
-
-                    /*
-                     * Sempre começa pelo vídeo 01.
-                     */
-
                     playlistAtual = 0;
-
 
 
                     atualizarPlaylistInterface();
 
 
-
-                    /*
-                     * Usa o único player.
-                     */
-
                     if (
                         videoPlayerPronto &&
                         videoPlayer
                     ) {
-
 
                         videoPlayer.loadVideoById({
 
@@ -1487,18 +985,11 @@
 
                         videoPlayer.playVideo();
 
-
                     }
 
 
-
-                    /*
-                     * Vai para a seção História.
-                     */
-
                     setTimeout(
                         function () {
-
 
                             document
                                 .getElementById(
@@ -1511,25 +1002,19 @@
 
                                 });
 
-
                         },
                         150
                     );
-
 
                 }
             );
 
 
+        /* ======================================================
+           CONTROLES DO TOPO
 
-        /* ==========================================================
-           CONTROLES DO PLAYER NO TOPO
-           
-           Estes são os botões novos.
-           
-           Eles NÃO criam outro player.
-        =========================================================== */
-
+           Controlam o mesmo player da Playlist.
+        ======================================================= */
 
         document
             .getElementById(
@@ -1539,7 +1024,6 @@
                 "click",
                 videoAnterior
             );
-
 
 
         document
@@ -1552,7 +1036,6 @@
             );
 
 
-
         document
             .getElementById(
                 "topVideoPause"
@@ -1561,7 +1044,6 @@
                 "click",
                 pausarVideo
             );
-
 
 
         document
@@ -1574,10 +1056,11 @@
             );
 
 
-
-        /* ==========================================================
+        /* ======================================================
            ITENS DA PLAYLIST
-        =========================================================== */
+
+           Continuam usando o mesmo player.
+        ======================================================= */
 
         document
             .querySelectorAll(
@@ -1586,11 +1069,9 @@
             .forEach(
                 function (item) {
 
-
                     item.addEventListener(
                         "click",
                         function () {
-
 
                             const indice =
                                 Number(
@@ -1599,32 +1080,20 @@
 
 
                             carregarVideo(
-
                                 indice,
-
                                 true
-
                             );
-
 
                         }
                     );
-
 
                 }
             );
 
 
-
-        /* ==========================================================
-           ESTADO INICIAL
-        =========================================================== */
-
         atualizarPlaylistInterface();
 
-
     </script>
-
 
 </body>
 
