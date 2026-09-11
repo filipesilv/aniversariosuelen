@@ -11,6 +11,11 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <meta
+        name="referrer"
+        content="strict-origin-when-cross-origin"
+    >
+
     <title>Nossa História</title>
 
     <link rel="stylesheet" href="style.css">
@@ -19,17 +24,6 @@
 
 
 <body>
-
-
-    <!-- ==========================================================
-         PLAYER DE MÚSICA — INVISÍVEL
-    =========================================================== -->
-
-    <div
-        id="youtube-player"
-        class="youtube-hidden-player">
-    </div>
-
 
 
     <!-- ==========================================================
@@ -44,7 +38,9 @@
             <a
                 href="#inicio"
                 class="logo">
+
                 NÓS
+
             </a>
 
 
@@ -85,60 +81,6 @@
                 </ul>
 
             </nav>
-
-
-
-            <!-- PLAYER DE MÚSICA -->
-
-            <div class="music-player">
-
-
-                <button
-                    type="button"
-                    class="music-control"
-                    id="musicPlay"
-                    title="Iniciar música"
-                    aria-label="Iniciar música">
-
-                    ▶
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="music-control"
-                    id="musicPause"
-                    title="Pausar música"
-                    aria-label="Pausar música">
-
-                    ❚❚
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="music-control"
-                    id="musicNext"
-                    title="Próxima música"
-                    aria-label="Próxima música">
-
-                    ⏭
-
-                </button>
-
-
-                <span
-                    class="music-counter"
-                    id="musicCounter">
-
-                    01 / 04
-
-                </span>
-
-
-            </div>
 
 
         </div>
@@ -308,8 +250,6 @@
 
 
 
-                <!-- GALERIA DE FOTOS -->
-
                 <div class="gallery">
 
 
@@ -449,7 +389,9 @@
 
 
 
-                        <!-- CONTROLES -->
+                        <!-- ==================================================
+                             CONTROLES
+                        =================================================== -->
 
                         <div class="video-controls">
 
@@ -873,32 +815,10 @@
 
 
         /* ==========================================================
-           PLAYLIST DE MÚSICAS
+           ÚNICA PLAYLIST DO SITE
         =========================================================== */
 
-        const playlistMusicas = [
-
-            "oejyRpHiP2M",
-            "_k2ty4A5x1w",
-            "ZbkshrKvgIg",
-            "kI6ywewtYkc"
-
-        ];
-
-
-        let musicaAtual = 0;
-
-        let youtubePlayer = null;
-
-        let playerPronto = false;
-
-
-
-        /* ==========================================================
-           PLAYLIST VISUAL
-        =========================================================== */
-
-        const playlistVideos = [
+        const playlist = [
 
             {
                 id: "oejyRpHiP2M",
@@ -908,7 +828,6 @@
 
                 descricao:
                     "Energia"
-
             },
 
             {
@@ -919,7 +838,6 @@
 
                 descricao:
                     "DVD To Be Brasilia"
-
             },
 
             {
@@ -930,7 +848,6 @@
 
                 descricao:
                     "LETRA / LEGENDADO"
-
             },
 
             {
@@ -941,13 +858,17 @@
 
                 descricao:
                     "Panda sem Moderação 2"
-
             }
 
         ];
 
 
-        let videoAtual = 0;
+
+        /* ==========================================================
+           ESTADO ÚNICO DA PLAYLIST
+        =========================================================== */
+
+        let playlistAtual = 0;
 
         let videoPlayer = null;
 
@@ -962,84 +883,8 @@
         function onYouTubeIframeAPIReady() {
 
 
-            /*
-             * IMPORTANTE:
-             * O origin ajuda a identificar o domínio da página
-             * para o YouTube.
-             */
-
             const origem = window.location.origin;
 
-
-
-            /* ======================================================
-               PLAYER DA MÚSICA
-            ======================================================= */
-
-            youtubePlayer = new YT.Player(
-                "youtube-player",
-                {
-
-                    width: "1",
-
-                    height: "1",
-
-                    videoId:
-                        playlistMusicas[musicaAtual],
-
-                    playerVars: {
-
-                        autoplay: 0,
-
-                        controls: 0,
-
-                        disablekb: 1,
-
-                        fs: 0,
-
-                        iv_load_policy: 3,
-
-                        modestbranding: 1,
-
-                        playsinline: 1,
-
-                        rel: 0,
-
-                        origin: origem
-
-                    },
-
-                    events: {
-
-                        onReady: function () {
-
-                            playerPronto = true;
-
-                        },
-
-                        onStateChange:
-                            controlarEstadoMusica,
-
-                        onError:
-                            function (evento) {
-
-                                console.error(
-                                    "Erro YouTube Música:",
-                                    evento.data
-                                );
-
-                            }
-
-                    }
-
-                }
-            );
-
-
-
-            /* ======================================================
-               PLAYER DA PLAYLIST
-            ======================================================= */
 
             videoPlayer = new YT.Player(
                 "video-playlist-player",
@@ -1050,7 +895,7 @@
                     height: "100%",
 
                     videoId:
-                        playlistVideos[videoAtual].id,
+                        playlist[playlistAtual].id,
 
                     playerVars: {
 
@@ -1075,18 +920,20 @@
 
                                 videoPlayerPronto = true;
 
-                                atualizarVideoInterface();
+                                atualizarPlaylistInterface();
 
                             },
 
+
                         onStateChange:
                             controlarEstadoVideo,
+
 
                         onError:
                             function (evento) {
 
                                 console.error(
-                                    "Erro YouTube Vídeo:",
+                                    "Erro YouTube:",
                                     evento.data
                                 );
 
@@ -1097,124 +944,226 @@
                 }
             );
 
-
         }
 
 
 
         /* ==========================================================
-           MÚSICA — CONTADOR
+           ATUALIZAR INTERFACE
         =========================================================== */
 
-        function atualizarContadorMusica() {
+        function atualizarPlaylistInterface() {
 
 
-            const contador =
-                document.getElementById(
-                    "musicCounter"
+            const video =
+                playlist[playlistAtual];
+
+
+            document
+                .getElementById("videoTitle")
+                .textContent =
+                    video.titulo;
+
+
+            document
+                .getElementById("videoDescription")
+                .textContent =
+                    video.descricao;
+
+
+            document
+                .getElementById("videoCounter")
+                .textContent =
+
+                    String(
+                        playlistAtual + 1
+                    ).padStart(2, "0")
+
+                    + " / " +
+
+                    String(
+                        playlist.length
+                    ).padStart(2, "0");
+
+
+
+            document
+                .querySelectorAll(".playlist-item")
+                .forEach(
+                    function (
+                        item,
+                        indice
+                    ) {
+
+                        item.classList.toggle(
+
+                            "active",
+
+                            indice ===
+                            playlistAtual
+
+                        );
+
+                    }
                 );
 
-
-            contador.textContent =
-
-                String(
-                    musicaAtual + 1
-                ).padStart(2, "0")
-
-                + " / " +
-
-                String(
-                    playlistMusicas.length
-                ).padStart(2, "0");
-
-
         }
 
 
 
         /* ==========================================================
-           MÚSICA — PLAY
+           CARREGAR VÍDEO
         =========================================================== */
 
-        function iniciarMusica() {
+        function carregarVideo(
+            indice,
+            reproduzir = true
+        ) {
 
 
-            if (!playerPronto) {
+            if (!videoPlayerPronto) {
+
                 return;
+
             }
 
 
-            youtubePlayer.playVideo();
-
-
-        }
-
-
-
-        /* ==========================================================
-           MÚSICA — PAUSE
-        =========================================================== */
-
-        function pausarMusica() {
-
-
-            if (!playerPronto) {
-                return;
-            }
-
-
-            youtubePlayer.pauseVideo();
-
-
-        }
-
-
-
-        /* ==========================================================
-           MÚSICA — PRÓXIMA
-        =========================================================== */
-
-        function proximaMusica() {
-
-
-            if (!playerPronto) {
-                return;
-            }
-
-
-            musicaAtual++;
-
+            /*
+             * Se passar do último,
+             * volta para o primeiro.
+             */
 
             if (
-                musicaAtual >=
-                playlistMusicas.length
+                indice >=
+                playlist.length
             ) {
 
-                musicaAtual = 0;
+                indice = 0;
 
             }
 
 
-            atualizarContadorMusica();
+            /*
+             * Se voltar antes do primeiro,
+             * vai para o último.
+             */
+
+            if (indice < 0) {
+
+                indice =
+                    playlist.length - 1;
+
+            }
 
 
-            youtubePlayer.loadVideoById({
+            playlistAtual = indice;
+
+
+            atualizarPlaylistInterface();
+
+
+            videoPlayer.loadVideoById({
 
                 videoId:
-                    playlistMusicas[musicaAtual]
+                    playlist[
+                        playlistAtual
+                    ].id
 
             });
 
 
+            if (reproduzir) {
+
+                videoPlayer.playVideo();
+
+            }
+            else {
+
+                videoPlayer.pauseVideo();
+
+            }
+
         }
 
 
 
         /* ==========================================================
-           MÚSICA — FIM
+           VÍDEO ANTERIOR
         =========================================================== */
 
-        function controlarEstadoMusica(evento) {
+        function videoAnterior() {
+
+
+            carregarVideo(
+                playlistAtual - 1,
+                true
+            );
+
+        }
+
+
+
+        /* ==========================================================
+           PRÓXIMO VÍDEO
+        =========================================================== */
+
+        function proximoVideo() {
+
+
+            carregarVideo(
+                playlistAtual + 1,
+                true
+            );
+
+        }
+
+
+
+        /* ==========================================================
+           PLAY
+        =========================================================== */
+
+        function reproduzirVideo() {
+
+
+            if (!videoPlayerPronto) {
+
+                return;
+
+            }
+
+
+            videoPlayer.playVideo();
+
+        }
+
+
+
+        /* ==========================================================
+           PAUSE
+        =========================================================== */
+
+        function pausarVideo() {
+
+
+            if (!videoPlayerPronto) {
+
+                return;
+
+            }
+
+
+            videoPlayer.pauseVideo();
+
+        }
+
+
+
+        /* ==========================================================
+           VÍDEO TERMINOU
+        =========================================================== */
+
+        function controlarEstadoVideo(evento) {
 
 
             if (
@@ -1222,44 +1171,20 @@
                 YT.PlayerState.ENDED
             ) {
 
-                proximaMusica();
+                /*
+                 * Ao terminar:
+                 *
+                 * 01 → 02
+                 * 02 → 03
+                 * 03 → 04
+                 * 04 → 01
+                 */
+
+                proximoVideo();
 
             }
 
-
         }
-
-
-
-        /* ==========================================================
-           CONTROLES DA MÚSICA
-        =========================================================== */
-
-        document
-            .getElementById("musicPlay")
-            .addEventListener(
-                "click",
-                iniciarMusica
-            );
-
-
-        document
-            .getElementById("musicPause")
-            .addEventListener(
-                "click",
-                pausarMusica
-            );
-
-
-        document
-            .getElementById("musicNext")
-            .addEventListener(
-                "click",
-                proximaMusica
-            );
-
-
-        atualizarContadorMusica();
 
 
 
@@ -1278,32 +1203,45 @@
 
 
                     /*
-                     * Começa a primeira música
-                     * quando o usuário clica.
+                     * Sempre começa pelo primeiro
+                     * vídeo da playlist.
                      */
 
-                    musicaAtual = 0;
+                    playlistAtual = 0;
 
 
-                    atualizarContadorMusica();
+                    atualizarPlaylistInterface();
 
 
-                    if (playerPronto) {
+
+                    /*
+                     * Se o player já estiver pronto,
+                     * carrega e inicia o primeiro vídeo.
+                     */
+
+                    if (videoPlayerPronto) {
 
 
-                        youtubePlayer.loadVideoById({
+                        videoPlayer.loadVideoById({
 
                             videoId:
-                                playlistMusicas[0]
+                                playlist[
+                                    playlistAtual
+                                ].id
 
                         });
 
 
-                        youtubePlayer.playVideo();
-
+                        videoPlayer.playVideo();
 
                     }
 
+
+
+                    /*
+                     * Depois do clique,
+                     * leva o usuário para a história.
+                     */
 
                     setTimeout(
                         function () {
@@ -1332,227 +1270,7 @@
 
 
         /* ==========================================================
-           PLAYLIST — ATUALIZAR INTERFACE
-        =========================================================== */
-
-        function atualizarVideoInterface() {
-
-
-            const video =
-                playlistVideos[videoAtual];
-
-
-            document
-                .getElementById("videoTitle")
-                .textContent =
-                    video.titulo;
-
-
-            document
-                .getElementById("videoDescription")
-                .textContent =
-                    video.descricao;
-
-
-            document
-                .getElementById("videoCounter")
-                .textContent =
-
-                    String(
-                        videoAtual + 1
-                    ).padStart(2, "0")
-
-                    + " / " +
-
-                    String(
-                        playlistVideos.length
-                    ).padStart(2, "0");
-
-
-
-            document
-                .querySelectorAll(
-                    ".playlist-item"
-                )
-                .forEach(
-                    function (
-                        item,
-                        indice
-                    ) {
-
-
-                        item.classList.toggle(
-
-                            "active",
-
-                            indice ===
-                            videoAtual
-
-                        );
-
-
-                    }
-                );
-
-
-        }
-
-
-
-        /* ==========================================================
-           PLAYLIST — CARREGAR VÍDEO
-        =========================================================== */
-
-        function carregarVideo(
-            indice,
-            reproduzir = true
-        ) {
-
-
-            if (!videoPlayerPronto) {
-                return;
-            }
-
-
-            if (indice < 0) {
-
-                indice =
-                    playlistVideos.length - 1;
-
-            }
-
-
-            if (
-                indice >=
-                playlistVideos.length
-            ) {
-
-                indice = 0;
-
-            }
-
-
-            videoAtual = indice;
-
-
-            atualizarVideoInterface();
-
-
-            videoPlayer.loadVideoById({
-
-                videoId:
-                    playlistVideos[
-                        videoAtual
-                    ].id
-
-            });
-
-
-            if (!reproduzir) {
-
-                videoPlayer.pauseVideo();
-
-            }
-
-
-        }
-
-
-
-        /* ==========================================================
-           ANTERIOR
-        =========================================================== */
-
-        function videoAnterior() {
-
-            carregarVideo(
-                videoAtual - 1
-            );
-
-        }
-
-
-
-        /* ==========================================================
-           PRÓXIMO
-        =========================================================== */
-
-        function proximoVideo() {
-
-            carregarVideo(
-                videoAtual + 1
-            );
-
-        }
-
-
-
-        /* ==========================================================
-           PLAY
-        =========================================================== */
-
-        function reproduzirVideo() {
-
-
-            if (!videoPlayerPronto) {
-                return;
-            }
-
-
-            videoPlayer.playVideo();
-
-        }
-
-
-
-        /* ==========================================================
-           PAUSE
-        =========================================================== */
-
-        function pausarVideo() {
-
-
-            if (!videoPlayerPronto) {
-                return;
-            }
-
-
-            videoPlayer.pauseVideo();
-
-        }
-
-
-
-        /* ==========================================================
-           VÍDEO TERMINOU
-        =========================================================== */
-
-        function controlarEstadoVideo(evento) {
-
-
-            if (
-                evento.data ===
-                YT.PlayerState.ENDED
-            ) {
-
-                /*
-                 * O próximo vídeo é carregado.
-                 *
-                 * Quando chegar no 04,
-                 * volta automaticamente para o 01.
-                 */
-
-                proximoVideo();
-
-            }
-
-
-        }
-
-
-
-        /* ==========================================================
-           BOTÕES DA PLAYLIST
+           CONTROLES DA PLAYLIST
         =========================================================== */
 
         document
@@ -1593,9 +1311,7 @@
         =========================================================== */
 
         document
-            .querySelectorAll(
-                ".playlist-item"
-            )
+            .querySelectorAll(".playlist-item")
             .forEach(
                 function (item) {
 
@@ -1612,16 +1328,23 @@
 
 
                             carregarVideo(
-                                indice
+                                indice,
+                                true
                             );
-
 
                         }
                     );
 
-
                 }
             );
+
+
+
+        /* ==========================================================
+           ESTADO INICIAL
+        =========================================================== */
+
+        atualizarPlaylistInterface();
 
 
     </script>
