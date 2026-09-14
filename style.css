@@ -272,7 +272,7 @@ rgba(0, 0, 0, 0.72)
 ),
 url("imagens/1.jpeg");
 background-size: cover;
-background-position: center 70%;
+background-position: center top;
 filter: grayscale(100%);
 }
 
@@ -769,7 +769,7 @@ rgba(0, 0, 0, 0.9)
 ),
 url("imagens/16.jpeg");
 background-size: cover;
-background-position: center 60%;
+background-position: center top;
 }
 
 .final-section p {
