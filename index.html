@@ -26,127 +26,125 @@
 
 <body>
 
-```
 <!-- ==========================================================
      HEADER
 =========================================================== -->
 
 <header class="header">
 
-    <div class="header-content">
+```
+<div class="header-content">
 
-        <a
-            href="#inicio"
-            class="logo">
-            NÓS
-        </a>
+    <a
+        href="#inicio"
+        class="logo">
+        NÓS
+    </a>
 
-        <nav class="header-nav">
+    <nav class="header-nav">
+
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="menu" id="mainMenu">
+
+            <li>
+                <a href="#inicio">
+                    Início
+                </a>
+            </li>
+
+            <li>
+                <a href="#historia">
+                    História
+                </a>
+            </li>
+
+            <li>
+                <a href="#momentos">
+                    Momentos
+                </a>
+            </li>
+
+            <li>
+                <a href="#playlist">
+                    Playlist
+                </a>
+            </li>
+
+            <li>
+                <a href="#final">
+                    Nós
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- ==================================================
+         CONTROLE DO TOPO
+    =================================================== -->
+
+    <div class="top-player-controls">
+
+        <div class="top-player-buttons">
 
             <button
                 type="button"
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Abrir menu"
-                aria-expanded="false">
-                ☰
+                id="topVideoPrevious"
+                title="Vídeo anterior"
+                aria-label="Vídeo anterior">
+                ⏮
             </button>
 
-            <ul class="menu" id="mainMenu">
+            <button
+                type="button"
+                id="topVideoPlay"
+                title="Reproduzir"
+                aria-label="Reproduzir">
+                ▶
+            </button>
 
-                <li>
-                    <a href="#inicio">
-                        Início
-                    </a>
-                </li>
+            <button
+                type="button"
+                id="topVideoPause"
+                title="Pausar"
+                aria-label="Pausar">
+                ❚❚
+            </button>
 
-                <li>
-                    <a href="#historia">
-                        História
-                    </a>
-                </li>
+            <button
+                type="button"
+                id="topVideoNext"
+                title="Próximo vídeo"
+                aria-label="Próximo vídeo">
+                ⏭
+            </button>
 
-                <li>
-                    <a href="#momentos">
-                        Momentos
-                    </a>
-                </li>
+        </div>
 
-                <li>
-                    <a href="#playlist">
-                        Playlist
-                    </a>
-                </li>
+        <div class="top-player-info">
 
-                <li>
-                    <a href="#final">
-                        Nós
-                    </a>
-                </li>
+            <span class="top-player-label">
+                Tocando agora
+            </span>
 
-            </ul>
+            <div class="top-player-current">
 
-        </nav>
+                <strong id="topVideoTitle">
+                    Marcos &amp; Belutti — Sonho De Todo Casal
+                </strong>
 
-        <!-- ==================================================
-             CONTROLE DO TOPO
-        =================================================== -->
-
-        <div class="top-player-controls">
-
-            <div class="top-player-buttons">
-
-                <button
-                    type="button"
-                    id="topVideoPrevious"
-                    title="Vídeo anterior"
-                    aria-label="Vídeo anterior">
-                    ⏮
-                </button>
-
-                <button
-                    type="button"
-                    id="topVideoPlay"
-                    title="Reproduzir"
-                    aria-label="Reproduzir">
-                    ▶
-                </button>
-
-                <button
-                    type="button"
-                    id="topVideoPause"
-                    title="Pausar"
-                    aria-label="Pausar">
-                    ❚❚
-                </button>
-
-                <button
-                    type="button"
-                    id="topVideoNext"
-                    title="Próximo vídeo"
-                    aria-label="Próximo vídeo">
-                    ⏭
-                </button>
-
-            </div>
-
-            <div class="top-player-info">
-
-                <span class="top-player-label">
-                    Tocando agora
+                <span id="topVideoCounter">
+                    01 / 04
                 </span>
-
-                <div class="top-player-current">
-
-                    <strong id="topVideoTitle">
-                        Marcos &amp; Belutti — Sonho De Todo Casal
-                    </strong>
-
-                    <span id="topVideoCounter">
-                        01 / 04
-                    </span>
-
-                </div>
 
             </div>
 
@@ -154,8 +152,10 @@
 
     </div>
 
-</header>
+</div>
+```
 
+</header>
 
 <!-- ==========================================================
      CONTEÚDO
@@ -163,678 +163,934 @@
 
 <main>
 
-    <!-- ======================================================
-         INÍCIO
-    ======================================================= -->
-
-    <section
-        id="inicio"
-        class="hero">
-
-        <div class="hero-image"></div>
-
-        <div class="hero-content fade-in">
-
-            <span class="hero-subtitle">
-                Uma história que continua
-            </span>
-
-            <h1>
-                Meu amor, minha vida.
-            </h1>
-
-            <p>
-                Entre tantos caminhos que a vida poderia ter
-                escolhido, ela colocou você no meu.
-                E foi assim que começou a nossa história.
-            </p>
-
-            <a
-                href="#historia"
-                id="startStory"
-                class="button">
-                Nossa história
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ======================================================
-         HISTÓRIA
-    ======================================================= -->
-
-    <section
-        id="historia"
-        class="section historia">
-
-        <div class="section-content">
-
-            <span class="section-label">
-                Nossa história
-            </span>
-
-            <h2>
-                Nossa história
-            </h2>
-
-            <div class="text-content">
-
-                <p>
-                    Meu amor, já se passaram muitos aniversários
-                    seus e eu me sinto realizado por poder fazer
-                    parte de cada uma dessas datas tão especiais.
-                </p>
-
-                <p>
-                    A cada ano crescemos juntos, aprendemos juntos
-                    e construímos mais uma parte da nossa vida.
-                </p>
-
-                <p>
-                    Você se tornou uma parte tão importante de mim
-                    que eu já não consigo imaginar meus dias sem
-                    pensar em você.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ======================================================
-         FRASE
-    ======================================================= -->
-
-    <section class="quote-section">
-
-        <div class="quote-content">
-
-            <span class="quote-mark">
-                “
-            </span>
-
-            <blockquote>
-                De todas as histórias que eu poderia viver,
-                a minha favorita sempre será a nossa.
-            </blockquote>
-
-        </div>
-
-    </section>
-
-
-    <!-- ======================================================
-         MOMENTOS
-    ======================================================= -->
-
-    <section
-        id="momentos"
-        class="section momentos">
-
-        <div class="section-content">
-
-            <span class="section-label">
-                Momentos
-            </span>
-
-            <h2>
-                Nossas lembranças
-            </h2>
-
-            <div class="gallery">
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/1.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/2.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/3.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/5.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/6.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/7.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/8.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/9.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/10.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/11.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/12.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/13.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/14.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/15.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/16.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/17.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/18.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/19.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/20.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/21.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/22.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/23.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/24.jpeg"
-                        alt="Momento especial">
-                </div>
-
-                <div class="gallery-item">
-                    <img
-                        src="imagens/25.jpeg"
-                        alt="Momento especial">
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ======================================================
-         PLAYLIST
-    ======================================================= -->
-
-    <section
-        id="playlist"
-        class="section playlist-section">
-
-        <div class="section-content">
-
-            <span class="section-label">
-                Playlist
-            </span>
-
-            <h2>
-                Algumas músicas da nossa história
-            </h2>
-
-            <div class="playlist-container">
-
-                <div class="video-main">
-
-                    <div class="video-frame">
-
-                        <div id="video-playlist-player"></div>
-
-                    </div>
-
-                    <div class="video-controls">
-
-                        <button
-                            type="button"
-                            id="playlistPrevious"
-                            title="Vídeo anterior"
-                            aria-label="Vídeo anterior">
-                            ⏮
-                        </button>
-
-                        <button
-                            type="button"
-                            id="playlistPlay"
-                            title="Reproduzir"
-                            aria-label="Reproduzir">
-                            ▶
-                        </button>
-
-                        <button
-                            type="button"
-                            id="playlistPause"
-                            title="Pausar"
-                            aria-label="Pausar">
-                            ❚❚
-                        </button>
-
-                        <button
-                            type="button"
-                            id="playlistNext"
-                            title="Próximo vídeo"
-                            aria-label="Próximo vídeo">
-                            ⏭
-                        </button>
-
-                        <div class="video-information">
-
-                            <span>
-                                Tocando agora
-                            </span>
-
-                            <strong id="playlistVideoTitle">
-                                Marcos &amp; Belutti — Sonho De Todo Casal
-                            </strong>
-
-                        </div>
-
-                        <span
-                            id="playlistVideoCounter"
-                            class="video-counter">
-                            01 / 04
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="playlist-list">
-
-                    <div
-                        class="playlist-item active"
-                        data-video="0">
-
-                        <div class="playlist-number">
-                            01
-                        </div>
-
-                        <div class="playlist-details">
-
-                            <strong>
-                                Marcos &amp; Belutti — Sonho De Todo Casal
-                            </strong>
-
-                            <span>
-                                Energia
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        class="playlist-item"
-                        data-video="1">
-
-                        <div class="playlist-number">
-                            02
-                        </div>
-
-                        <div class="playlist-details">
-
-                            <strong>
-                                Henrique e Juliano — Realidade ou Fantasia
-                            </strong>
-
-                            <span>
-                                DVD To Be Brasilia
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        class="playlist-item"
-                        data-video="2">
-
-                        <div class="playlist-number">
-                            03
-                        </div>
-
-                        <div class="playlist-details">
-
-                            <strong>
-                                Charlie Brown Jr. — Me Encontra
-                            </strong>
-
-                            <span>
-                                LETRA / LEGENDADO
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        class="playlist-item"
-                        data-video="3">
-
-                        <div class="playlist-number">
-                            04
-                        </div>
-
-                        <div class="playlist-details">
-
-                            <strong>
-                                Panda — Eu te seguro
-                            </strong>
-
-                            <span>
-                                Panda sem Moderação 2
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ======================================================
-         CAMINHADA
-    ======================================================= -->
-
-    <section class="timeline-section">
-
-        <div class="section-content">
-
-            <span class="section-label">
-                Nossa caminhada
-            </span>
-
-            <h2>
-                Tudo que vivemos
-            </h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <div class="timeline-marker">
-                        01
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <span>
-                            O começo
-                        </span>
-
-                        <h3>
-                            Quando tudo começou
-                        </h3>
-
-                        <p>
-                            Um momento que talvez parecesse
-                            simples naquele dia, mas que acabou
-                            mudando nossas vidas para sempre.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-marker">
-                        02
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <span>
-                            Um novo capítulo
-                        </span>
-
-                        <h3>
-                            Mais uma história
-                        </h3>
-
-                        <p>
-                            Vieram novos momentos, novos sonhos
-                            e muitas lembranças que hoje fazem
-                            parte de quem somos.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-marker">
-                        03
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <span>
-                            Hoje
-                        </span>
-
-                        <h3>
-                            Ainda nós
-                        </h3>
-
-                        <p>
-                            E depois de tudo que vivemos,
-                            continuamos escolhendo um ao outro
-                            todos os dias.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ======================================================
-         FRASE FINAL
-    ======================================================= -->
-
-    <section class="quote-section quote-final">
-
-        <div class="quote-content">
-
-            <span class="quote-mark">
-                “
-            </span>
-
-            <blockquote>
-                Eu escolheria você. Hoje, amanhã e em todas
-                as vezes.
-            </blockquote>
-
-        </div>
-
-    </section>
-
-
-    <!-- ======================================================
-         FINAL
-    ======================================================= -->
-
-    <section
-        id="final"
-        class="section final-section">
-
-        <div class="section-content">
-
-            <span class="section-label">
-                Para sempre
-            </span>
-
-            <h2>
-                Ainda somos nós.
-            </h2>
-
-            <p>
-                Entre aniversários, viagens, risadas, desafios
-                e todos os momentos que ainda estão por vir,
-                existe uma certeza que permanece:
-                continuar escrevendo nossos capítulos juntos.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ======================================================
-         LIGHTBOX / CARROSSEL
-    ======================================================= -->
-
-    <div
-        class="gallery-lightbox"
-        id="galleryLightbox"
-        aria-hidden="true">
-
-        <button
-            type="button"
-            class="lightbox-close"
-            id="lightboxClose"
-            aria-label="Fechar imagem">
-            ×
-        </button>
-
-        <button
-            type="button"
-            class="lightbox-prev"
-            id="lightboxPrev"
-            aria-label="Imagem anterior">
-            ‹
-        </button>
-
-        <div
-            class="lightbox-content"
-            id="lightboxContent">
-
-            <img
-                id="lightboxImage"
-                src=""
-                alt="">
-
-            <div
-                class="lightbox-counter"
-                id="lightboxCounter">
-            </div>
-
-        </div>
-
-        <button
-            type="button"
-            class="lightbox-next"
-            id="lightboxNext"
-            aria-label="Próxima imagem">
-            ›
-        </button>
+```
+<!-- ======================================================
+     INÍCIO
+======================================================= -->
+
+<section
+    id="inicio"
+    class="hero">
+
+    <div class="hero-image"></div>
+
+    <div class="hero-content fade-in">
+
+        <span class="hero-subtitle">
+            Uma história que continua
+        </span>
+
+        <h1>
+            Meu amor, minha vida.
+        </h1>
+
+        <p>
+            Entre tantos caminhos que a vida poderia ter
+            escolhido, ela colocou você no meu.
+            E foi assim que começou a nossa história.
+        </p>
+
+        <a
+            href="#historia"
+            id="startStory"
+            class="button">
+            Nossa história
+        </a>
 
     </div>
 
-</main>
+</section>
 
+
+<!-- ======================================================
+     HISTÓRIA
+======================================================= -->
+
+<section
+    id="historia"
+    class="section historia">
+
+    <div class="section-content">
+
+        <span class="section-label">
+            Nossa história
+        </span>
+
+        <h2>
+            Nossa história
+        </h2>
+
+        <div class="text-content">
+
+            <p>
+                Nossa história começou de um jeito simples, com uma
+                conversa no Messenger do Facebook. O que naquele
+                momento parecia ser apenas uma conversa acabou se
+                transformando em uma amizade e, pouco a pouco, em algo
+                que nenhum de nós imaginava que chegaria tão longe.
+            </p>
+
+            <p>
+                Vivemos aquela fase como se fosse um namoro de
+                adolescente. Tínhamos nossos encontros na escola,
+                nossas conversas e aqueles momentos que, para outras
+                pessoas, talvez parecessem pequenos, mas que para nós
+                significavam muito.
+            </p>
+
+            <p>
+                Você tinha até vergonha de comer perto de mim. ❤️
+            </p>
+
+            <p>
+                E, no final das aulas, muitas vezes nos encontrávamos
+                para ficar juntos, conversar e, claro, trocar aqueles
+                beijos que fizeram parte do começo da nossa história.
+                Quando não tinha aula, a gente dava um jeito de ficar
+                junto também.
+            </p>
+
+            <p>
+                Foram muitos momentos simples, mas foram justamente
+                esses momentos que fizeram nossa história ser tão
+                especial.
+            </p>
+
+            <p>
+                E existe uma lembrança que sempre vai fazer parte de
+                mim: <strong>você foi a primeira pessoa que eu beijei.</strong>
+            </p>
+
+            <p>
+                Naquele momento eu não poderia imaginar que aquela
+                menina que estava começando a fazer parte da minha vida
+                seria, anos depois, a mulher com quem eu construiria
+                minha família e dividiria minha vida.
+            </p>
+
+            <p>
+                Depois de tudo que vivemos juntos, chegou o dia
+                <strong>23/03/2021.</strong>
+            </p>
+
+            <p>
+                Foi quando assumimos nosso namoro.
+            </p>
+
+            <p>
+                E, para mim, não era simplesmente começar um namoro.
+                Era escolher você.
+            </p>
+
+            <p>
+                Escolher ficar ao seu lado, viver novas histórias,
+                enfrentar as dificuldades, comemorar as conquistas e
+                continuar construindo aquilo que já vinha crescendo
+                entre nós há tanto tempo.
+            </p>
+
+            <p>
+                E parece que a gente tinha mesmo certeza do que queria,
+                porque poucos meses depois, em
+                <strong>17/10/2021</strong>, ficamos noivos.
+            </p>
+
+            <p>
+                E o mais engraçado é que a gente decidiu que ia casar
+                sem nem ter nada ainda. 😂❤️
+            </p>
+
+            <p>
+                Mas talvez isso mostre exatamente o que sempre sentimos:
+                a gente não precisava ter tudo pronto para ter certeza
+                de que queria ficar juntos.
+            </p>
+
+            <p>
+                A gente só precisava ter um ao outro.
+            </p>
+
+            <p>
+                Então chegou o dia que transformou nosso namoro em uma
+                vida compartilhada.
+            </p>
+
+            <p>
+                <strong>20/05/2022.</strong>
+            </p>
+
+            <p>
+                O dia em que nos casamos.
+            </p>
+
+            <p>
+                O dia em que escolhemos oficialmente continuar nossa
+                história lado a lado.
+            </p>
+
+            <p>
+                Desde então, continuamos construindo nossa vida juntos,
+                aprendendo um com o outro, enfrentando os dias difíceis,
+                comemorando os dias felizes e criando novas lembranças.
+            </p>
+
+            <p>
+                E hoje, quando olho para trás, percebo o quanto aquela
+                conversa no Messenger mudou completamente a minha vida.
+            </p>
+
+            <p>
+                Começou com uma conversa.
+            </p>
+
+            <p>
+                Virou amizade.
+            </p>
+
+            <p>
+                Depois virou amor.
+            </p>
+
+            <p>
+                Virou namoro.
+            </p>
+
+            <p>
+                Virou noivado.
+            </p>
+
+            <p>
+                Virou casamento.
+            </p>
+
+            <p>
+                E continua sendo nós dois.
+            </p>
+
+            <p>
+                E é justamente isso que mais amo na nossa história:
+                <strong>ela ainda não terminou.</strong>
+            </p>
+
+            <p>
+                Ainda temos muitos lugares para conhecer, muitos sonhos
+                para realizar, muitos momentos para viver e muitos
+                aniversários para comemorar juntos.
+            </p>
+
+            <p>
+                E entre todos os sonhos que ainda queremos realizar
+                juntos, existe um que guardamos com muito carinho no
+                coração: o sonho de um dia termos nossos filhos.
+            </p>
+
+            <p>
+                Ainda não temos eles nos nossos braços, ainda não sabemos
+                seus nomes, seus sorrisos ou com quem vão parecer. Mas
+                já fazem parte dos nossos planos, dos nossos sonhos e
+                daquele futuro que imaginamos juntos.
+            </p>
+
+            <p>
+                Eu imagino nós dois vivendo essa nova fase, aprendendo
+                juntos a ser pais, vendo nossa família crescer e podendo
+                olhar para os nossos filhos e contar a eles que tudo
+                começou muito antes deles chegarem.
+            </p>
+
+            <p>
+                Começou com uma conversa no Messenger.
+            </p>
+
+            <p>
+                Começou com uma amizade.
+            </p>
+
+            <p>
+                Começou com dois adolescentes que gostavam de ficar
+                juntos.
+            </p>
+
+            <p>
+                E um dia, quem sabe, poderemos contar para eles que
+                daquela história nasceu uma família inteira.
+            </p>
+
+            <p>
+                Esse é um dos sonhos que ainda quero realizar ao seu
+                lado. Construir nossa família, ver nossa casa se encher
+                de amor, de risadas, de momentos e, quem sabe, daqueles
+                pequenos que vão carregar um pedacinho de nós dois.
+            </p>
+
+            <p>
+                E quando esse dia chegar, quero olhar para você e lembrar
+                de tudo que vivemos até chegar ali.
+            </p>
+
+            <p>
+                Porque eu não quero apenas viver uma história de amor
+                com você.
+            </p>
+
+            <p>
+                <strong>Eu quero construir uma vida inteira ao seu lado.</strong>
+            </p>
+
+            <p>
+                Nós ainda temos muitos sonhos pela frente.
+            </p>
+
+            <p>
+                E eu espero poder realizar cada um deles com você. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FRASE
+======================================================= -->
+
+<section class="quote-section">
+
+    <div class="quote-content">
+
+        <span class="quote-mark">
+            “
+        </span>
+
+        <blockquote>
+            De todas as histórias que eu poderia viver,
+            a minha favorita sempre será a nossa.
+        </blockquote>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     MOMENTOS
+======================================================= -->
+
+<section
+    id="momentos"
+    class="section momentos">
+
+    <div class="section-content">
+
+        <span class="section-label">
+            Momentos
+        </span>
+
+        <h2>
+            Nossas lembranças
+        </h2>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/1.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/2.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/3.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/5.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/6.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/7.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/8.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/9.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/10.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/11.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/12.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/13.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/14.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/15.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/16.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/17.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/18.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/19.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/20.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/21.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/22.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/23.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/24.jpeg"
+                    alt="Momento especial">
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="imagens/25.jpeg"
+                    alt="Momento especial">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     PLAYLIST
+======================================================= -->
+
+<section
+    id="playlist"
+    class="section playlist-section">
+
+    <div class="section-content">
+
+        <span class="section-label">
+            Playlist
+        </span>
+
+        <h2>
+            Algumas músicas da nossa história
+        </h2>
+
+        <div class="playlist-container">
+
+            <div class="video-main">
+
+                <div class="video-frame">
+
+                    <div id="video-playlist-player"></div>
+
+                </div>
+
+                <div class="video-controls">
+
+                    <button
+                        type="button"
+                        id="playlistPrevious"
+                        title="Vídeo anterior"
+                        aria-label="Vídeo anterior">
+                        ⏮
+                    </button>
+
+                    <button
+                        type="button"
+                        id="playlistPlay"
+                        title="Reproduzir"
+                        aria-label="Reproduzir">
+                        ▶
+                    </button>
+
+                    <button
+                        type="button"
+                        id="playlistPause"
+                        title="Pausar"
+                        aria-label="Pausar">
+                        ❚❚
+                    </button>
+
+                    <button
+                        type="button"
+                        id="playlistNext"
+                        title="Próximo vídeo"
+                        aria-label="Próximo vídeo">
+                        ⏭
+                    </button>
+
+                    <div class="video-information">
+
+                        <span>
+                            Tocando agora
+                        </span>
+
+                        <strong id="playlistVideoTitle">
+                            Marcos &amp; Belutti — Sonho De Todo Casal
+                        </strong>
+
+                    </div>
+
+                    <span
+                        id="playlistVideoCounter"
+                        class="video-counter">
+                        01 / 04
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="playlist-list">
+
+                <div
+                    class="playlist-item active"
+                    data-video="0">
+
+                    <div class="playlist-number">
+                        01
+                    </div>
+
+                    <div class="playlist-details">
+
+                        <strong>
+                            Marcos &amp; Belutti — Sonho De Todo Casal
+                        </strong>
+
+                        <span>
+                            Energia
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="playlist-item"
+                    data-video="1">
+
+                    <div class="playlist-number">
+                        02
+                    </div>
+
+                    <div class="playlist-details">
+
+                        <strong>
+                            Henrique e Juliano — Realidade ou Fantasia
+                        </strong>
+
+                        <span>
+                            DVD To Be Brasilia
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="playlist-item"
+                    data-video="2">
+
+                    <div class="playlist-number">
+                        03
+                    </div>
+
+                    <div class="playlist-details">
+
+                        <strong>
+                            Charlie Brown Jr. — Me Encontra
+                        </strong>
+
+                        <span>
+                            LETRA / LEGENDADO
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="playlist-item"
+                    data-video="3">
+
+                    <div class="playlist-number">
+                        04
+                    </div>
+
+                    <div class="playlist-details">
+
+                        <strong>
+                            Panda — Eu te seguro
+                        </strong>
+
+                        <span>
+                            Panda sem Moderação 2
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     CAMINHADA
+======================================================= -->
+
+<section class="timeline-section">
+
+    <div class="section-content">
+
+        <span class="section-label">
+            Nossa caminhada
+        </span>
+
+        <h2>
+            Tudo que vivemos
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-marker">
+                    01
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        O começo
+                    </span>
+
+                    <h3>
+                        Quando tudo começou
+                    </h3>
+
+                    <p>
+                        Um momento que talvez parecesse
+                        simples naquele dia, mas que acabou
+                        mudando nossas vidas para sempre.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-marker">
+                    02
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        Um novo capítulo
+                    </span>
+
+                    <h3>
+                        Mais uma história
+                    </h3>
+
+                    <p>
+                        Vieram novos momentos, novos sonhos
+                        e muitas lembranças que hoje fazem
+                        parte de quem somos.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-marker">
+                    03
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        Hoje
+                    </span>
+
+                    <h3>
+                        Ainda nós
+                    </h3>
+
+                    <p>
+                        E depois de tudo que vivemos,
+                        continuamos escolhendo um ao outro
+                        todos os dias.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FRASE FINAL
+======================================================= -->
+
+<section class="quote-section quote-final">
+
+    <div class="quote-content">
+
+        <span class="quote-mark">
+            “
+        </span>
+
+        <blockquote>
+            Eu escolheria você. Hoje, amanhã e em todas
+            as vezes.
+        </blockquote>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FINAL
+======================================================= -->
+
+<section
+    id="final"
+    class="section final-section">
+
+    <div class="section-content">
+
+        <span class="section-label">
+            Para você, meu amor
+        </span>
+
+        <h2>
+            Ainda somos nós.
+        </h2>
+
+        <div class="text-content">
+
+            <p>
+                Meu amor,
+            </p>
+
+            <p>
+                Já se passaram muitos aniversários seus, e em cada
+                um deles eu me sinto realizado por poder fazer parte
+                de uma data tão especial na sua vida. A cada ano que
+                passa, sinto que nós crescemos cada vez mais juntos,
+                em todos os sentidos da nossa vida.
+            </p>
+
+            <p>
+                Você é tudo para mim. Eu já não sei mais passar um
+                dia sem pensar em você, porque você faz parte da
+                minha rotina, das minhas decisões, dos meus planos
+                e, principalmente, da minha vida.
+            </p>
+
+            <p>
+                Quero que você saiba que pode contar sempre comigo.
+                Quero continuar sendo seu melhor amigo, seu
+                companheiro, aquele que está ao seu lado nos momentos
+                bons e nos momentos difíceis. Quero ser sempre o seu
+                porto seguro, assim como você é o meu.
+            </p>
+
+            <p>
+                Eu te amo hoje, amanhã e sempre. ❤️
+            </p>
+
+            <p>
+                Minha princesa, você sempre vai ser aquela menina que
+                conheci pela primeira vez e que, sem eu imaginar,
+                acabaria se tornando a pessoa mais importante da minha
+                vida.
+            </p>
+
+            <p>
+                Feliz aniversário, meu amor. ❤️
+            </p>
+
+            <p>
+                Que a vida continue nos permitindo viver muitos e
+                muitos aniversários juntos.
+            </p>
+
+            <p>
+                Eu te amo. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     LIGHTBOX / CARROSSEL
+======================================================= -->
+
+<div
+    class="gallery-lightbox"
+    id="galleryLightbox"
+    aria-hidden="true">
+
+    <button
+        type="button"
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Fechar imagem">
+        ×
+    </button>
+
+    <button
+        type="button"
+        class="lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Imagem anterior">
+        ‹
+    </button>
+
+    <div
+        class="lightbox-content"
+        id="lightboxContent">
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="">
+
+        <div
+            class="lightbox-counter"
+            id="lightboxCounter">
+        </div>
+
+    </div>
+
+    <button
+        type="button"
+        class="lightbox-next"
+        id="lightboxNext"
+        aria-label="Próxima imagem">
+        ›
+
+    </button>
+
+</div>
+```
+
+</main>
 
 <!-- ==========================================================
      FOOTER
@@ -842,19 +1098,19 @@
 
 <footer class="footer">
 
-    <span>
-        Feito para nós
-    </span>
+```
+<span>
+    Feito para nós
+</span>
+```
 
 </footer>
-
 
 <!-- ==========================================================
      YOUTUBE API
 =========================================================== -->
 
 <script src="https://www.youtube.com/iframe_api"></script>
-
 
 <!-- ==========================================================
      JAVASCRIPT
@@ -1738,7 +1994,6 @@
     atualizarPlaylistInterface();
 
 </script>
-```
 
 </body>
 
