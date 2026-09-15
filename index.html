@@ -1276,12 +1276,33 @@
 
     let videoPlayerPronto = false;
 
+    let youtubeApiPronta = false;
+
+    let acaoPlayerPendente = null;
+
 
     /* ======================================================
        CRIA O PLAYER
     ======================================================= */
 
-    function onYouTubeIframeAPIReady() {
+    function criarPlayerYouTube() {
+
+        if (
+            !youtubeApiPronta ||
+            typeof YT === "undefined" ||
+            !YT.Player
+        ) {
+            return;
+        }
+
+        const elementoPlayer =
+            document.getElementById(
+                "video-playlist-player"
+            );
+
+        if (!elementoPlayer || videoPlayer) {
+            return;
+        }
 
         const origem =
             window.location.origin;
@@ -1290,61 +1311,70 @@
             new YT.Player(
                 "video-playlist-player",
                 {
-
                     width: "100%",
-
                     height: "100%",
-
                     videoId:
                         playlist[
                             playlistAtual
                         ].id,
-
                     playerVars: {
-
                         autoplay: 0,
-
                         controls: 1,
-
                         modestbranding: 1,
-
                         playsinline: 1,
-
                         rel: 0,
-
-                        origin: origem
-
+                        enablejsapi: 1,
+                        origin: origem,
+                        widget_referrer:
+                            window.location.href
                     },
-
                     events: {
-
                         onReady:
                             function () {
-
                                 videoPlayerPronto =
                                     true;
 
                                 atualizarPlaylistInterface();
 
+                                if (acaoPlayerPendente) {
+                                    const acao =
+                                        acaoPlayerPendente;
+
+                                    acaoPlayerPendente =
+                                        null;
+
+                                    acao();
+                                }
                             },
 
                         onStateChange:
                             controlarEstadoVideo,
 
+                        onAutoplayBlocked:
+                            function () {
+                                console.info(
+                                    "O navegador bloqueou a reprodução automática do YouTube."
+                                );
+                            },
+
                         onError:
                             function (evento) {
-
                                 console.error(
                                     "Erro YouTube:",
                                     evento.data
                                 );
-
                             }
-
                     }
-
                 }
             );
+    }
+
+
+    function onYouTubeIframeAPIReady() {
+
+        youtubeApiPronta = true;
+
+        criarPlayerYouTube();
 
     }
 
@@ -1451,49 +1481,57 @@
         reproduzir = true
     ) {
 
-        if (!videoPlayerPronto) {
-            return;
-        }
-
-
         if (
             indice >= playlist.length
         ) {
-
             indice = 0;
-
         }
-
 
         if (indice < 0) {
-
             indice =
                 playlist.length - 1;
-
         }
-
 
         playlistAtual =
             indice;
 
-
         atualizarPlaylistInterface();
 
+        function executar() {
 
-        videoPlayer.loadVideoById({
+            if (
+                !videoPlayerPronto ||
+                !videoPlayer
+            ) {
+                return;
+            }
 
-            videoId:
-                playlist[
-                    playlistAtual
-                ].id
+            if (reproduzir) {
 
-        });
+                videoPlayer.loadVideoById({
+                    videoId:
+                        playlist[
+                            playlistAtual
+                        ].id
+                });
 
+            } else {
 
-        if (reproduzir) {
+                videoPlayer.cueVideoById({
+                    videoId:
+                        playlist[
+                            playlistAtual
+                        ].id
+                });
 
-            videoPlayer.playVideo();
+            }
+        }
 
+        if (videoPlayerPronto && videoPlayer) {
+            executar();
+        } else {
+            acaoPlayerPendente =
+                executar;
         }
 
     }
@@ -1533,11 +1571,22 @@
 
     function reproduzirVideo() {
 
-        if (!videoPlayerPronto) {
-            return;
+        function executar() {
+
+            if (
+                videoPlayerPronto &&
+                videoPlayer
+            ) {
+                videoPlayer.playVideo();
+            }
         }
 
-        videoPlayer.playVideo();
+        if (videoPlayerPronto && videoPlayer) {
+            executar();
+        } else {
+            acaoPlayerPendente =
+                executar;
+        }
 
     }
 
@@ -1548,7 +1597,10 @@
 
     function pausarVideo() {
 
-        if (!videoPlayerPronto) {
+        if (
+            !videoPlayerPronto ||
+            !videoPlayer
+        ) {
             return;
         }
 
@@ -1595,23 +1647,10 @@
                 atualizarPlaylistInterface();
 
 
-                if (
-                    videoPlayerPronto &&
-                    videoPlayer
-                ) {
-
-                    videoPlayer.loadVideoById({
-
-                        videoId:
-                            playlist[
-                                playlistAtual
-                            ].id
-
-                    });
-
-                    videoPlayer.playVideo();
-
-                }
+                carregarVideo(
+                    0,
+                    true
+                );
 
 
                 setTimeout(
