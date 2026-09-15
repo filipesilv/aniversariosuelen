@@ -520,7 +520,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fafafa;
+    background: #0a0a0a;
     border-top: 1px solid rgba(255,255,255,.05);
     border-bottom: 1px solid rgba(255,255,255,.05);
 }
@@ -529,13 +529,12 @@ section {
     position: relative;
     width: min(100%, 880px);
     text-align: center;
-    color: rgba(0,0,0,.82);
 }
 
 .quote-mark {
     display: block;
     height: 35px;
-    color: rgb(0, 0, 0);
+    color: rgba(255,255,255,.2);
     font-family: Georgia, serif;
     font-size: 5rem;
     line-height: .7;
@@ -802,49 +801,154 @@ section {
 }
 
 /* ======================================================
-   FINAL
+   FINAL — CARTA PARA ELA
 ======================================================= */
 
 .final-section {
-    min-height: 70vh;
+    position: relative;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    padding: 130px 20px;
+    overflow: hidden;
     background:
         linear-gradient(
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.9)
+            180deg,
+            rgba(0,0,0,.72) 0%,
+            rgba(0,0,0,.58) 35%,
+            rgba(0,0,0,.90) 100%
         ),
         url("imagens/16.jpeg");
     background-size: cover;
-    background-position: center 30px;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+}
+
+.final-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.07) 0%,
+            transparent 52%
+        );
+    pointer-events: none;
 }
 
 .final-section .section-content {
-    max-width: 920px;
+    position: relative;
+    z-index: 1;
+    width: min(100%, 880px);
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 58px 70px 62px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(5,5,5,.54);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 30px 80px rgba(0,0,0,.42);
+}
+
+.final-section .section-content::before,
+.final-section .section-content::after {
+    content: "✦";
+    display: block;
+    color: rgba(255,255,255,.72);
+    font-size: .72rem;
+    letter-spacing: .3em;
+}
+
+.final-section .section-content::before {
+    margin-bottom: 25px;
+}
+
+.final-section .section-content::after {
+    margin-top: 28px;
 }
 
 .final-section .section-label {
-    margin-bottom: 15px;
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 7px 16px;
+    border: 1px solid rgba(255,255,255,.20);
+    border-radius: 999px;
+    color: rgba(255,255,255,.66);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .28em;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .final-section h2 {
+    position: relative;
     max-width: 800px;
+    margin: 0 auto 42px;
+    padding-bottom: 27px;
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: -.04em;
+}
+
+.final-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 54px;
+    height: 1px;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,.52);
 }
 
 .final-section .text-content {
-    max-width: 760px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .final-section .text-content p {
-    margin-bottom: 22px;
-    color: rgba(255,255,255,.82);
+    position: relative;
+    margin-bottom: 27px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255,255,255,.13);
+    color: rgba(255,255,255,.76);
     font-size: 1.04rem;
-    line-height: 1.9;
+    line-height: 2;
+    letter-spacing: .01em;
 }
 
 .final-section .text-content p:first-child {
+    margin-bottom: 30px;
+    padding-left: 0;
+    border-left: 0;
     color: #fff;
-    font-size: 1.25rem;
+    font-size: 1.38rem;
+    font-style: italic;
+}
+
+.final-section .text-content p:nth-last-child(2) {
+    margin-top: 42px;
+    padding: 19px 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(255,255,255,.035);
+    color: rgba(255,255,255,.90);
+    text-align: center;
+}
+
+.final-section .text-content p:last-child {
+    margin-top: 45px;
+    margin-bottom: 0;
+    padding: 0;
+    border: 0;
+    color: #fff;
+    font-size: 1.55rem;
+    font-style: italic;
+    text-align: center;
 }
 
 .final-section .text-content strong {
@@ -1534,5 +1638,60 @@ section {
 
     #historia .history-journey-closing strong {
         font-size: 1.04rem;
+    }
+}
+
+
+/* ======================================================
+   FINAL — AJUSTES RESPONSIVOS DA CARTA
+======================================================= */
+
+@media (max-width: 650px) {
+    .final-section {
+        min-height: auto;
+        padding: 95px 14px;
+        background-position: center 30%;
+    }
+
+    .final-section .section-content {
+        padding: 42px 22px 46px;
+    }
+
+    .final-section .section-content::before {
+        margin-bottom: 20px;
+    }
+
+    .final-section .section-label {
+        margin-bottom: 16px;
+        font-size: .60rem;
+        letter-spacing: .20em;
+    }
+
+    .final-section h2 {
+        margin-bottom: 34px;
+        padding-bottom: 22px;
+        font-size: clamp(2.7rem, 14vw, 4rem);
+    }
+
+    .final-section .text-content p {
+        margin-bottom: 23px;
+        padding-left: 14px;
+        font-size: .98rem;
+        line-height: 1.9;
+    }
+
+    .final-section .text-content p:first-child {
+        padding-left: 0;
+        font-size: 1.25rem;
+    }
+
+    .final-section .text-content p:nth-last-child(2) {
+        margin-top: 34px;
+        padding: 16px 15px;
+    }
+
+    .final-section .text-content p:last-child {
+        margin-top: 36px;
+        font-size: 1.35rem;
     }
 }
